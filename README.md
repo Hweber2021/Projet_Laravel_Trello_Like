@@ -11,6 +11,7 @@ FR - C'est un projet dont le but est la création d'un site web offrant les meme
   <li>Maquette et charte graphique - Figma et/ou document</li>
   <li>Diagramme de gantt - Excel</li>
   <li>Liste des tests - Document Excel</li>
+  <li>MCD des tables - Jmerise</li>
 </ul>
 </p>
   
