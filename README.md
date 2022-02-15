@@ -14,4 +14,6 @@ FR - C'est un projet dont le but est la création d'un site web offrant les meme
   <li>MCD des tables - Jmerise</li>
 </ul>
 </p>
+
+<p>Il sera nescéssaire de se documenter pour la bonne mise en place du projet.</p>
   
