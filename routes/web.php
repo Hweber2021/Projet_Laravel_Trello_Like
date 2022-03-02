@@ -18,3 +18,9 @@ Route::get('/'
     return view('welcome');
 })->name('welcome');
 
+Route::get('/BookYourWork/Welcome'
+    , function () {
+    return ('Bienvenu dans BookYouWork, l outil de KanBan ouvert à tous');
+})->name('welcome');
+
+
