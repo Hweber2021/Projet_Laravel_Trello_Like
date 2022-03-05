@@ -21,5 +21,11 @@
 
 @section('content')
 
+    <div class='text-center'>
+        <h1>Bienvenu sur BookYourWork l'environnement Kanban frendly du net</h1>
+        <p></p>
+
+    </div>
+
 @endsection
 
