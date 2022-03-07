@@ -24,3 +24,12 @@ Route::get('/BookYourWork/Welcome'
 })->name('welcome');
 
 
+Route::get('/login'
+    , function() {
+        return ('Bienvenu dans le formulaire de connexion');
+})->name('login');
+
+Route::get('/signup'
+    , function() {
+        return('Bienvenu dans le formulaire d inscription');
+})->name('signup');
