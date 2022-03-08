@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/'
     , function () {
     return view('welcome');
-})->name('welcome');
+})->name('welcomeLara');
 
 Route::get('/BookYourWork/Welcome'
     , function () {
-    return ('Bienvenu dans BookYouWork, l outil de KanBan ouvert à tous');
+    return view('Homepage.homepage');
 })->name('welcome');
 
 

@@ -34,5 +34,9 @@
         </p>
     </div>
 
+    <div class="image-center">
+        <img src="../components/image_center.jfif" />
+    </div>
+
 @endsection
 

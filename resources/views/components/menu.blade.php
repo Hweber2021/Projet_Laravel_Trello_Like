@@ -1,5 +1,5 @@
 <nav>
-    <a href="{{ route('welcome') }}">Welcome</a>
+    <a href="{{ route('welcome') }}"></a>
     <br>
     <a href="{{ route('login') }}">Inscription</a>
     <br>
