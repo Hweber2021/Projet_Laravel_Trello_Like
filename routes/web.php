@@ -33,3 +33,6 @@ Route::get('/signup'
     , function() {
         return('Bienvenu dans le formulaire d inscription');
 })->name('signup');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
