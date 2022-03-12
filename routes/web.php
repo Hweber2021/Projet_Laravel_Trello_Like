@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/'
     , function () {
@@ -39,5 +40,8 @@ Route::get('/profile'
     , function() {
         return view('auth.profil.profile');
 })->middleware('auth');
+
+Route::get('users/index', [UserController::class, 'index'])->name('users.index');
+Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
