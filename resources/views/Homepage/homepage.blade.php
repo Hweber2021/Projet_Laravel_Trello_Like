@@ -21,21 +21,37 @@
 
 @section('content')
 
-    <div class='title'>
-        <h1>Bienvenu sur BookYourWork l'environnement Kanban frendly du net</h1>
-    </div>
+    <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Connexion</a>
 
-    <div class='text-center'>
-        <p>
-        Vous trouverez au sein de ce site web toutes les fonctionnalités vous permettant la création de tableau de type Kanban.<br>
-        Au sein de ce logiciel, une interface de creation de tableau type Trello vous attend. Ces tableaux permettront à n'importe quel groupe de travail d'organiser la mise en place de mleur projet.<br>
-        Les non-initiés ne sont pas oublié. Notre manuel intégré vous permettra de faire vos premier pas dans le monde de la gestion de projet<br>
-        Afin de bénéficié des fonctionnalitées de notre application, la création d'un compte est néscéssaire. Une fois votre compte créer un message de confirmation vous sera envoyé.<br>
-        </p>
-    </div>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Inscription</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
 
-    <div class="image-center">
-        <img src="../components/image_center.jfif" />
+        <div class='title'>
+            <h1>Bienvenu sur BookYourWork l'environnement Kanban frendly du net</h1>
+        </div>
+
+        <div class='text-center'>
+            <p>
+            Vous trouverez au sein de ce site web toutes les fonctionnalités vous permettant la création de tableau de type Kanban.<br>
+            Au sein de ce logiciel, une interface de creation de tableau type Trello vous attend. Ces tableaux permettront à n'importe quel groupe de travail d'organiser la mise en place de mleur projet.<br>
+            Les non-initiés ne sont pas oublié. Notre manuel intégré vous permettra de faire vos premier pas dans le monde de la gestion de projet<br>
+            Afin de bénéficié des fonctionnalitées de notre application, la création d'un compte est néscéssaire. Une fois votre compte créer un message de confirmation vous sera envoyé.<br>
+            </p>
+        </div>
+
+        <div class="image-center">
+            <img src="../components/image_center.jfif" />
+        </div>
     </div>
 
 @endsection
