@@ -35,4 +35,9 @@ Route::get('/signup'
 })->name('signup');
 Auth::routes();
 
+Route::get('/profile'
+    , function() {
+        return view('auth.profil.profile');
+})->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home');
