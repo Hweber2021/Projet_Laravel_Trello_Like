@@ -22,19 +22,6 @@
 @section('content')
 
     <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Connexion</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Inscription</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
         <div class='title'>
             <h1>Bienvenu sur BookYourWork l'environnement Kanban frendly du net</h1>
@@ -50,7 +37,7 @@
         </div>
 
         <div class="image-center">
-            <img src="../components/image_center.jfif" />
+            
         </div>
     </div>
 

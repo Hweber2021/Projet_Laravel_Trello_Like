@@ -10,12 +10,7 @@ class UserController extends Controller {
 
     public function index()
     {
-        return view('users');
-    }
-
-    public function logout(Request $request) {
-        Auth::logout();
-        return redirect('/BookYourWork/Welcome');
+        return view('auth.profil.users');
     }
 
 } 

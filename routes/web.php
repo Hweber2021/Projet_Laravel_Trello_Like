@@ -27,21 +27,23 @@ Route::get('/BookYourWork/Welcome'
 
 Route::get('/login'
     , function() {
-        return ('Bienvenu dans le formulaire de connexion');
+        return view('auth.login');
 })->name('login');
 
 Route::get('/signup'
     , function() {
-        return('Bienvenu dans le formulaire d inscription');
+        return view('auth.register');
 })->name('signup');
 Auth::routes();
 
 Route::get('/profile'
     , function() {
-        return view('auth.profil.profile');
+        return view('auth.profil.users');
 })->middleware('auth');
 
-Route::get('users/index', [UserController::class, 'index'])->name('users.index');
-Route::post('logout', [UserController::class, 'logout'])->name('logout');
+Route::get('users/index', [UserController::class, 'UserController@index'])->name('users.index');
+Route::post('/logout', [UserController::class, 'UserController@logout'])->name('logout');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
