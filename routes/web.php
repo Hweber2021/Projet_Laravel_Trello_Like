@@ -41,7 +41,7 @@ Route::get('/profile'
         return view('auth.profil.users');
 })->middleware('auth');
 
-Route::get('users/index', [UserController::class, 'UserController@index'])->name('users.index');
+Route::get('users/index', [UserController::class, 'index'])->name('users.index');
 
 Auth::routes();
 
