@@ -12,10 +12,9 @@
       <div class="card-header">Laravel Custom Logout</div>
       <div class="card-body">
         <div class="col-md-12 text-center">
-              <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                  <button type="button" class="btn btn-primary">Logout</button>
-              </form>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
           </div>
         </div> 
     </div>
