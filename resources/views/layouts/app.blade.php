@@ -21,12 +21,17 @@
 </head>
 <body>
     <div id="app">
+        
+        <!-- Menu -->
+        @include('components.menu')
 
-    @include('components.menu')
-
+        <!-- Content -->
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- footer -->
+        @include('components.footer')
     </div>
 
     <footer>

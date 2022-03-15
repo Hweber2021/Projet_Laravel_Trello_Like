@@ -4,7 +4,8 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                    <div class="login_link">
+                <div class="navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <td class="nav-item">
@@ -16,22 +17,19 @@
                                 </td>
                             @endif
                         @else
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                                   {{ __('Logout') }}
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                      {{ __('Deconnexion') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                                </div>
                         @endguest
                     </div>
+                </div>
             </div>
         </nav>
