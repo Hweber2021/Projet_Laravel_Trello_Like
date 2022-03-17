@@ -7,14 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-Class Card extends Model
+Class Comment extends Model
 {
     protected $fillable = [
         'user_id',
-        'num_list',
-        'label_id',
-        'name',
-        'description'
+        'card_id',
+        'content',
     ];
 
     public function user()
@@ -22,13 +20,8 @@ Class Card extends Model
         $this->belongsTo('App\User');
     }
 
-    public function list()
+    public function card()
     {
-        $this->belongsTo('App\List');
-    }
-
-    public function label()
-    {
-        $this->belongsTo('App\Label');
+        $this->belongsTo('App\Card');
     }
 }
