@@ -33,7 +33,8 @@
             </p>
         </div>
 
-        <div class="image-center">
+        <div class="image_center">
+            <img src="/public/image/image_center.png" alt="image center">
         </div>
     </div>
 
