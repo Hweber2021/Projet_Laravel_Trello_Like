@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-      <h2 class="title_profile">Profile</h2>
+      <h2>Profile</h2>
       <div id="centerInterface_profile">
 
         <div class="card-body" id="user_baseInfo">
