@@ -40,7 +40,15 @@
                         </div>
 
                         <div class="form-group row">
+<<<<<<< HEAD
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom utilisateur') }}</label>
+=======
+<<<<<<< HEAD
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Pseudo') }}</label>
+=======
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom utilisateur') }}</label>
+>>>>>>> 54f12ac (commit same as last)
+>>>>>>> 57770f1b6d163eab3aa0b3a6d804afde377789d2
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>

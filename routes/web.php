@@ -35,3 +35,4 @@ Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')
 
 Auth::routes();
 
+Route::get('/dashboard', 'HomeController@index')->name('home');

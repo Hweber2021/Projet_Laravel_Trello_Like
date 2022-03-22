@@ -33,5 +33,9 @@
         <!-- footer -->
         @include('components.footer')
     </div>
+
+    <footer>
+            @include('components.footer')
+    </footer>
 </body>
 </html>
