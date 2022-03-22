@@ -1,8 +1,7 @@
-<header>
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav id="menu" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            {{ config('app.name', 'Acceuil') }}
         </a>
 
         <div class="navbar-collapse" id="navbarSupportedContent">
@@ -18,7 +17,11 @@
                         </td>
                     @endif
                     @else
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="menu-right" aria-labelledby="navbarDropdown">
+                        <a id="profile" class="profile-link" href="{{ route('user.index') }}">
+                            {{ Auth::user()->name }}
+                        </a>
+
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -34,5 +37,3 @@
         </div>
     </div>
 </nav>
-</header>
-
