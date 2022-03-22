@@ -2,8 +2,8 @@
 
 @section('content')
   <div class="container">
-      <h2>Profile</h2>
-      <div class="centerInterface">
+      <h2 class="title_profile">Profile</h2>
+      <div id="centerInterface_profile">
 
         <div class="card-body" id="user_baseInfo">
           <label for="name_user" id="name_label">Nom :</label>
@@ -22,8 +22,6 @@
           <label for="email_user" id="email_label">Adresse mail :</label><br>
           <input type="text" id="email_user" name="email_user" value="{{ Auth::user()->email }}" disabled>
         </div>
-
-        
 
       </div>
   </div>
