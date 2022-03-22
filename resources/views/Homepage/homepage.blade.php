@@ -5,16 +5,13 @@
 @section('style')
 
     <style>
-
         html, body {
-            background-color: #fff;
-            color: #636b6f;
+            color: 'black';
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
-            margin: 0;
+            margin: 5px;
         }
-
     </style>
 
 @endsection
@@ -31,13 +28,12 @@
             <p>
             Vous trouverez au sein de ce site web toutes les fonctionnalités vous permettant la création de tableau de type Kanban.<br>
             Au sein de ce logiciel, une interface de creation de tableau type Trello vous attend. Ces tableaux permettront à n'importe quel groupe de travail d'organiser la mise en place de mleur projet.<br>
-            Les non-initiés ne sont pas oublié. Notre manuel intégré vous permettra de faire vos premier pas dans le monde de la gestion de projet<br>
             Afin de bénéficié des fonctionnalitées de notre application, la création d'un compte est néscéssaire. Une fois votre compte créer un message de confirmation vous sera envoyé.<br>
             </p>
         </div>
 
-        <div class="image-center">
-            
+        <div class="image_center">
+            <img src="/public/image/image_center.png" alt="image center">
         </div>
     </div>
 

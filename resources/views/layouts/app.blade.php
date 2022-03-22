@@ -14,19 +14,24 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     @yield('style')
+    <link rel="stylesheet" href="{{ asset('css/_layout.css') }}">
 </head>
 <body>
     <div id="app">
+        
+        <!-- Menu -->
+        @include('components.menu')
 
-    @include('components.menu')
-
+        <!-- Content -->
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- footer -->
+        @include('components.footer')
     </div>
 
     <footer>

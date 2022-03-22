@@ -16,11 +16,6 @@ use App\Http\Controllers\UserController;
 
 Route::get('/'
     , function () {
-    return view('welcome');
-})->name('welcomeLara');
-
-Route::get('/BookYourWork/Welcome'
-    , function () {
     return view('Homepage.homepage');
 })->name('welcome');
 
@@ -36,12 +31,7 @@ Route::get('/signup'
 })->name('signup');
 Auth::routes();
 
-Route::get('/profile'
-    , function() {
-        return view('auth.profil.users');
-})->middleware('auth');
-
-Route::get('users/index', [UserController::class, 'UserController@index'])->name('users.index');
+Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.index');
 
 Auth::routes();
 
