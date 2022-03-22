@@ -45,4 +45,4 @@ Route::get('users/index', [UserController::class, 'UserController@index'])->name
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
