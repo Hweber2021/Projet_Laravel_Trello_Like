@@ -5,7 +5,7 @@
         </a>
 
         <div class="navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav ml-auto">
+            <div class="navbar-nav-ml-auto">
                 <!-- Authentication Links -->
                 @guest
                     <td class="nav-item">

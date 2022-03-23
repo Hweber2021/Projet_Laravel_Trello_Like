@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Connexion') }}</div>
+                <div class="card-header">{{ __('Inscription') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -40,11 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-<<<<<<< HEAD
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Pseudo') }}</label>
-=======
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom utilisateur') }}</label>
->>>>>>> 54f12ac (commit same as last)
+                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Nom utilisateur') }}</label>
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
