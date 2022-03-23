@@ -1,7 +1,7 @@
 <nav id="menu" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Acceuil') }}
+            <img src="/public/image/logo.png" alt="logo">
         </a>
 
         <div class="navbar-collapse" id="navbarSupportedContent">
