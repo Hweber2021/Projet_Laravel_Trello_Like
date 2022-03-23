@@ -3,8 +3,7 @@
 @section('content')
   <div class="container">
       <h2>Profile</h2>
-      <div id="centerInterface_profile">
-
+      <div class="centerInterface_profile">
         <div class="card-body" id="user_baseInfo">
           <label for="name_user" id="name_label">Nom :</label>
           <input type="text" id="name_user" name="name_user" value="{{ Auth::user()->name }}" disabled>
@@ -22,7 +21,6 @@
           <label for="email_user" id="email_label">Adresse mail :</label><br>
           <input type="text" id="email_user" name="email_user" value="{{ Auth::user()->email }}" disabled>
         </div>
-
       </div>
   </div>
 @endsection
