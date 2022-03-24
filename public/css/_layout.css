@@ -95,7 +95,6 @@ h2 {
 
 #user_username {
   margin-top: 30px;
-  margin-left: 15px;
 }
 
 #username_user {
@@ -103,12 +102,11 @@ h2 {
   height: 26px;
   border-radius: 20px;
   padding: 10px;
-  width: 600px;
+  width: 740px;
 }
 
 #user_email {
   margin-top: 30px;
-  margin-left: 15px;
 }
 
 #email_user {
@@ -116,7 +114,7 @@ h2 {
   height: 26px;
   border-radius: 20px;
   padding: 10px;
-  width: 600px;
+  width: 740px;
 }
 
 .nav-item {
