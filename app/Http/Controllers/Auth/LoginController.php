@@ -28,9 +28,11 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function show()
+    public function showLoginForm()
     {
-        return view('auth.login');
+        return view('auth.login', [
+            'menuDisable' => true
+        ]);
     }
 
     /**

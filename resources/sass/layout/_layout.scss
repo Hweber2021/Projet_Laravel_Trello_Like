@@ -28,11 +28,67 @@
 .card-body
 {
   background-color: #57CC99;
+  background-image: url("/image/pexels-daria-obymaha-1684151.jpg");
   margin: auto;
   padding: 60px;
   width: 500px;
   text-align: center;
   border-radius: 30px;
+}
+
+#email
+{
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+#password
+{
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 40px;
+}
+
+.form-check-input
+{
+  width: 20px;
+  height: 16px;
+}
+
+.form-check-label
+{
+  color: white;
+}
+
+#submitButton
+{
+  width: 265px;
+  height: 45px;
+  background-color: #38A3A5;
+  border: #38A3A5;
+  border-radius: 30px;
+  color: white;
+  font-size: 22px;
+  margin: 15px;
+}
+
+#btnPasswordForget
+{
+  display: inline-block;
+  color: white;
+  font-size: 22px;
+  position: relative;
 }
 
 .navbar-brand

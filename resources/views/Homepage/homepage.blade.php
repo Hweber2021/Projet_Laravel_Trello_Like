@@ -33,7 +33,7 @@
         </div>
 
         <div class="image_center">
-            <img src="/public/image/image_center.png" alt="image center">
+            <img src="/image/image_center.png" alt="image center">
         </div>
     </div>
 

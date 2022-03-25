@@ -31,9 +31,11 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function show()
+    public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'menuDisable' => true
+        ]);
     }
 
     /**
