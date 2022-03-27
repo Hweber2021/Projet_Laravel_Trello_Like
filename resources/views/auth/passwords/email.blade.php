@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="/image/logo.png" alt="logo">
+                    </a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,10 +22,9 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" placeholder="Adresse mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -33,8 +36,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Envoie du lien de reset') }}
+                                <button type="submit" id="submitButton" class="btn btn-primary">
+                                    {{ __('Envoi du lien') }}
                                 </button>
                             </div>
                         </div>
