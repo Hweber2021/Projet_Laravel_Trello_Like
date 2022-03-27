@@ -2,19 +2,6 @@
 
 @section('title', 'Homepage')
 
-@section('style')
-
-    <style>
-        html, body {
-            color: 'black';
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 5px;
-        }
-    </style>
-
-@endsection
 
 @section('content')
 
