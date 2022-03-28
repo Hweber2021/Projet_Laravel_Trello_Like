@@ -30,6 +30,29 @@
   border-radius: 30px;
 }
 
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 750;
+  color: black;
+  margin-left: 30px;
+}
+
+.homepage-text-center {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  width: 650px;
+  position: relative;
+  top: 100px;
+  margin-left: 30px;
+}
+
+.image_center {
+  position: relative;
+  left: 830px;
+  bottom: 325px;
+  height: auto;
+}
+
 #name {
   width: 265px;
   height: 45px;
