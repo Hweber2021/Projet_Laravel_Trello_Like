@@ -11,6 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\Auth\RegisterController;
+use App\http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+Route::get('/'
+    , function () {
+    return view('Homepage.homepage');
+})->name('welcome');
+
+Route::get('/signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/signup', [RegisterController::class, 'register'])->name('registerSend');
+
+Route::get('/login', [LoginController::class, 'showloginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('oginSend');
+
+
+Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.index');
+
+
+Route::get('/dashboard', 'HomeController@index')->middleware('auth')->name('home');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
