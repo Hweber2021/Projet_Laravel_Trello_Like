@@ -28,7 +28,8 @@ Route::get('/login', [LoginController::class, 'showloginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('loginSend');
 
 Auth::routes([
-    'register' => false
+    'register' => false,
+    'login' => false
 ]);
 
 Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.index');
