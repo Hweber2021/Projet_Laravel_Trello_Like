@@ -28,6 +28,13 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    public function showLoginForm()
+    {
+        return view('auth.login', [
+            'menuDisable' => true
+        ]);
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -36,5 +43,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function email()
+    {
+        return 'email';
+    }
+
+    public function username()
+    {
+        return 'username';
     }
 }

@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "sora";
+  src: url(/fonts/Sora-VariableFont_wght.ttf?461555370e041e3eab2d82f2683e4687);
+}
+#menu {
+  background-color: #80ED99;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 121px;
+}
+
+.card {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 60px;
+}
+
+.card-body {
+  background-color: #57CC99;
+  margin: auto;
+  padding: 60px;
+  width: 500px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 750;
+  color: black;
+  margin-left: 30px;
+}
+
+.homepage-text-center {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  width: 650px;
+  position: relative;
+  top: 100px;
+  margin-left: 30px;
+}
+
+.image_center {
+  position: relative;
+  left: 830px;
+  bottom: 325px;
+  height: auto;
+}
+
+#name {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+#surname {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+#username {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+#email {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+#password {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 35px;
+}
+
+#password-confirm {
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  color: #2D7D90;
+  margin-bottom: 25px;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 16px;
+}
+
+.form-check-label {
+  color: white;
+}
+
+#submitButton {
+  width: 265px;
+  height: 45px;
+  background-color: #38A3A5;
+  border: #38A3A5;
+  border-radius: 30px;
+  color: white;
+  font-size: 22px;
+  margin: 15px;
+}
+
+#btnPasswordForget {
+  display: inline-block;
+  color: white;
+  font-size: 22px;
+  position: relative;
+}
+
+.navbar-brand {
+  position: relative;
+  top: 14px;
+  left: 10px;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  position: relative;
+  bottom: 50px;
+}
+
+.nav-link {
+  background-color: #2D7D90;
+  color: white;
+  width: 30px;
+  height: 20px;
+  border: #2D7D90;
+  border-radius: 30px;
+  padding: 10px;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.menu-right {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-item {
+  background-color: #E34421;
+  color: white;
+  width: 30px;
+  height: 20px;
+  border: #E34421;
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 10px;
+  margin: 15px;
+}
+
+#name_label {
+  font-size: 22px;
+  margin: 15px;
+}
+
+h2 {
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.centerInterface_profile {
+  margin: auto;
+  width: 50%;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#user_baseInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+#user_baseInfo_name {
+  margin-right: 90px;
+}
+
+#name_user {
+  font-size: 22px;
+  height: 26px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#surname_user {
+  font-size: 22px;
+  height: 26px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#user_username {
+  margin-top: 30px;
+}
+
+#username_user {
+  font-size: 22px;
+  height: 26px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 740px;
+}
+
+#user_email {
+  margin-top: 30px;
+}
+
+#email_user {
+  font-size: 22px;
+  height: 26px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 740px;
+}
+
+.nav-item {
+  background-color: #2D7D90;
+  color: white;
+}
