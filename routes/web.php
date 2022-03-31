@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -20,14 +21,11 @@ Route::get('/'
     return view('Homepage.homepage');
 })->name('welcome');
 
-
-Route::get('/login'
-    , function() {
-        return view('auth.login');
-})->name('login');
-
 Route::get('/signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/signup', [RegisterController::class, 'register'])->name('registerSend');
+
+Route::get('/login', [LoginController::class, 'showloginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('loginSend');
 
 Auth::routes([
     'register' => false
