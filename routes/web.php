@@ -11,8 +11,6 @@
 |
 */
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -21,19 +19,20 @@ Route::get('/'
     return view('Homepage.homepage');
 })->name('welcome');
 
-Route::get('/signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/signup', [RegisterController::class, 'register'])->name('registerSend');
 
-Route::get('/login', [LoginController::class, 'showloginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login'])->name('loginSend');
+Route::get('/login'
+    , function() {
+        return view('auth.login');
+})->name('login');
 
-Auth::routes([
-    'register' => false,
-    'login' => false
-]);
+Route::get('/signup'
+    , function() {
+        return view('auth.register');
+})->name('signup');
+Auth::routes();
 
 Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.index');
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->middleware('auth')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
