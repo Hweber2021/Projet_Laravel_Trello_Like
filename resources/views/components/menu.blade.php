@@ -19,7 +19,7 @@
                     @else
                     <div class="menu-right" aria-labelledby="navbarDropdown">
                         <a id="profileLink" class="profile-link" href="{{ route('user.index') }}">
-                            {{ Auth::user()->username }}
+                            {{{ Auth::user()->username }}}
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

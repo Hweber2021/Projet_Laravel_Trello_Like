@@ -147,7 +147,8 @@
 #profileLink {
   color: white;
   text-decoration: none;
-  background-color: red;
+  background-color: cyan;
+  margin: 5px;
   border-radius: 30px;
 }
 
