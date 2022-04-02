@@ -139,6 +139,18 @@
   margin: 15px;
 }
 
+#btnLink {
+  color: white;
+  text-decoration: none;
+}
+
+#profileLink {
+  color: white;
+  text-decoration: none;
+  background-color: red;
+  border-radius: 30px;
+}
+
 #btnPasswordForget {
   display: inline-block;
   color: white;

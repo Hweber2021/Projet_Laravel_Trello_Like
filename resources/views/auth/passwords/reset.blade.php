@@ -5,15 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-<<<<<<< HEAD
-                <div class="card-header">{{ __('Reset Password') }}</div>
-=======
                 <div class="card-header">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="/image/logo.png" alt="logo">
                     </a>
                 </div>
->>>>>>> 56f243c0048c981e02104fc7e1e5e0dbcf5c4286
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -22,16 +18,9 @@
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
-<<<<<<< HEAD
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-=======
 
                             <div class="col-md-6">
                                 <input id="email" type="email" placeholder="Adresse mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
->>>>>>> 56f243c0048c981e02104fc7e1e5e0dbcf5c4286
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

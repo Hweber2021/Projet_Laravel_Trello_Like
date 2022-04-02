@@ -18,7 +18,7 @@
                     @endif
                     @else
                     <div class="menu-right" aria-labelledby="navbarDropdown">
-                        <a id="profile" class="profile-link" href="{{ route('user.index') }}">
+                        <a id="profileLink" class="profile-link" href="{{ route('user.index') }}">
                             {{ Auth::user()->username }}
                         </a>
 
