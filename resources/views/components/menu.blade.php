@@ -1,7 +1,7 @@
 <nav id="menu" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Acceuil') }}
+            <img src="/image/logo.png" alt="logo">
         </a>
 
         <div class="navbar-collapse" id="navbarSupportedContent">
@@ -13,13 +13,13 @@
                     </td>
                     @if (Route::has('register'))
                         <td class="nav-item">
-                            <a class="nav-link" href="{{ route('signup') }}">{{ __('Inscription') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                         </td>
                     @endif
                     @else
                     <div class="menu-right" aria-labelledby="navbarDropdown">
-                        <a id="profile" class="profile-link" href="{{ route('user.index') }}">
-                            {{ Auth::user()->name }}
+                        <a id="profileLink" class="profile-link" href="{{ route('user.index') }}">
+                            {{{ Auth::user()->username }}}
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

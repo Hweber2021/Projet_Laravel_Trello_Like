@@ -23,7 +23,9 @@
     <div id="app">
         
         <!-- Menu -->
-        @include('components.menu')
+        @if(empty($menuDisable))
+            @include('components.menu')
+        @endif
 
         <!-- Content -->
         <main class="py-4">

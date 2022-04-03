@@ -45,8 +45,17 @@ class User extends Authenticatable
      */
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = bcrypt($value);
+        $this->attributes['password'] = $value;
     }
+
+    /**
+     * get first letter of name and surname for User profile
+     */
+    public function getNameSurnameLetter()
+    {
+        return substr($this->first_name, 0, 1) . substr($this->last_name, 0, 1);
+    }
+    
 
     public function workplaces()
     {

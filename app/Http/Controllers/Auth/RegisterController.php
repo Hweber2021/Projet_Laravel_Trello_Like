@@ -31,9 +31,11 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function show()
+    public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'menuDisable' => true
+        ]);
     }
 
     /**
@@ -59,7 +61,8 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:12', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%-\*]).*$/', 'confirmed'
+            ],
         ]);
     }
 
