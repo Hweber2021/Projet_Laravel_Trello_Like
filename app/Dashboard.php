@@ -9,6 +9,18 @@ use Illuminate\Notifications\Notifiable;
 
 Class Dashboard extends Model 
 {
+    // Table of the model
+    protected $table = 'dashboards';
+
+    // primary key of the table
+    protected $primaryKey = 'dashboard_id';
+
+    // key type of the auto-incrementing primary key
+    protected $keyType = 'int';
+
+    // Is ket auto-incrementing ?
+    protected $incrementing = TRUE;
+
     protected $fillable = [
         'workplace_id',
         'name',
@@ -17,5 +29,10 @@ Class Dashboard extends Model
     public function workplace()
     {
         return $this->belongsTo('app\Workplace');
+    }
+
+    public static function getWithWorkplace()
+    {
+        return Dashboard::with('workplace');
     }
 }
