@@ -28,7 +28,7 @@ Class Dashboard extends Model
 
     public function workplace()
     {
-        return $this->belongsTo('app\Workplace');
+        return $this->belongsTo(Workplace::class);
     }
 
     public static function getWithWorkplace()

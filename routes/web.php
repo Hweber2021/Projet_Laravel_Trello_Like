@@ -40,7 +40,7 @@ Route::get('/dashboard', 'HomeController@index')->name('home');
 Route::prefix('dashboards')->as('dashboards.')->middleware('auth')->group(function() {
     Route::get('/', 'DashboardController@index')->name('index');
     Route::get('/show/{id}', 'DashboardController@show')->name('show');
-    Route::post('/store', 'DashboardController@store')->name('store')->middleware('block.request');
+    Route::post('/store', 'DashboardController@store')->name('store');
     Route::put('/update/{id}', 'DashboardController@update')->name('update');
     Route::delete('/delete/{id}', 'DashboardController@delete')->name('delete');
     Route::get('/create', 'DashboardController@create')->name('create');

@@ -59,6 +59,6 @@ class User extends Authenticatable
 
     public function workplaces()
     {
-        
+        return $this->hasMany(Workplace::class);
     }
 }

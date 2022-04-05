@@ -9,12 +9,14 @@
                     <a class="navbar-brand" href="{{ url('/dashboard') }}">
                         <p id="workplaceTittle"> {{{ Auth::workplace->name }}}</p>
                     </a>
+
+                    <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
+                        <p id="btnAddDashboard"> + </p>
+                    </a>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('dashboards.show') }}">
-
-                    </form>
+                    
                 </div>
             </div>
         </div>

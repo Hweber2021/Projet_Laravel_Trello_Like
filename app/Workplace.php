@@ -29,7 +29,12 @@ Class Workplace extends Model
 
     public function user()
     {
-        return $this->belongsTo('app\User');
+        return $this->belongsTo(User::class);
+    }
+
+    public function dashboard()
+    {
+        return $this->hasMany(Dashboard::class);
     }
 
     public static function getWithUser()
