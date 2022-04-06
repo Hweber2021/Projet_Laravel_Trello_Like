@@ -11,18 +11,18 @@ Class Workplace extends Model
 {
 
     // Table of the model
-    protected $table = 'workplaces';
+    public $table = 'workplaces';
 
     // primary key of the table
-    protected $primaryKey = 'workplace_id';
+    public $primaryKey = 'workplace_id';
 
     // key type of the auto-incrementing primary key
-    protected $keyType = 'int';
+    public $keyType = 'int';
 
     // Is ket auto-incrementing ?
-    protected $incrementing = TRUE;
+    public $incrementing = TRUE;
 
-    protected $fillable = [
+    public $fillable = [
         'user_id',
         'name',
     ];

@@ -10,18 +10,18 @@ use Illuminate\Notifications\Notifiable;
 Class Dashboard extends Model 
 {
     // Table of the model
-    protected $table = 'dashboards';
+    public $table = 'dashboards';
 
     // primary key of the table
-    protected $primaryKey = 'dashboard_id';
+    public $primaryKey = 'dashboard_id';
 
     // key type of the auto-incrementing primary key
-    protected $keyType = 'int';
+    public $keyType = 'int';
 
     // Is ket auto-incrementing ?
-    protected $incrementing = TRUE;
+    public $incrementing = TRUE;
 
-    protected $fillable = [
+    public $fillable = [
         'workplace_id',
         'name',
     ];
