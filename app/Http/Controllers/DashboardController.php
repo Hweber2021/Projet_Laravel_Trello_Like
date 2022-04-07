@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dashboard;
 use Illuminate\Http\Request;
+use App\Workplace;
 
 class DashboardController extends Controller
 {
@@ -12,9 +13,13 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug = null)
     {
-        return view("Dashboard.index");
+        //return view("Dashboard.index");
+        //$query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
+        //$dashboard = $query->withTrashed()->oldest('name')->paginate(5);
+        //$workplaces = Workplace::all();
+        return view('Dashboard.index', compact('dashboards', 'workplaces', 'slug'));
     }
 
     /**
@@ -24,7 +29,8 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.create')->with(Dashboard::all());
+        $workplaces = Workplace::all();
+        return view('Dashboard.create', compact('workplaces'))->with(Dashboard::all());
     }
 
     /**

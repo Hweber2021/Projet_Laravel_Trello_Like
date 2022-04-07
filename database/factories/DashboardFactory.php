@@ -18,7 +18,10 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(Dashboard::class, function (Faker $faker) {
+    $name = $faker->word();
     return [
-        'name' => $faker->name,
+        'workplace_id' => $faker->unique()->randomDigit,
+        'name' => $name,
+        'slug' => Str::slug($name),
     ];
 });

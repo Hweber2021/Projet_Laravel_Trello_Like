@@ -10,5 +10,6 @@ $factory->define(Workplace::class, function (Faker $faker) {
     return [
         'user_id' => $faker->unique()->randomDigit,
         'name' => $name,
+        'slug' => Str::slug($name),
     ];
 });

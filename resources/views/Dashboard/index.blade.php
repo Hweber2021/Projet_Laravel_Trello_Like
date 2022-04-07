@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        <p id="workplaceTittle"> {{{ Auth::workplace->name }}}</p>
+                        <p id="workplaceTittle"> {{{ $workplace->name }}}</p>
                     </a>
 
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
