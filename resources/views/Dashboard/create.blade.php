@@ -25,17 +25,21 @@
                     <form method="POST" action="{{ route('dashboards.store') }}">
                         <div class="form-group">
                             @csrf
-                            <label class="label">Catégorie</label>
-                            <div class="select">
-                                <select name="workplace_id">
-                                    @foreach($workplaces as $workplace)
-                                        <option value="{{ $workplace->id }}">{{ $workplace->name }}</option>
-                                    @endforeach
-                                </select>
+                            <div class="fields">
+                                <label class="label">Catégorie</label>
+                                <div class="select">
+                                    <select name="workplace_id">
+                                        @foreach($workplaces as $workplace)
+                                            <option value="{{ $workplace->id }}">{{ $workplace->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
 
-                            <label for="name">Donnee un nom à votre tableau:</label>
-                            <input type="text" class="form-control" name="name"/>
+                            <div class="fields">
+                                <label for="name">Donnee un nom à votre tableau:</label>
+                                <input type="text" class="form-control" name="name"/>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Créer le tableau</button>
                     </form>

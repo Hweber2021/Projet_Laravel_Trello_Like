@@ -18,7 +18,7 @@ class DashboardController extends Controller
         //return view("Dashboard.index");
         //$query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
         //$dashboard = $query->withTrashed()->oldest('name')->paginate(5);
-        //$workplaces = Workplace::all();
+        $workplaces = Workplace::all();
         return view('Dashboard.index', compact('dashboards', 'workplaces', 'slug'));
     }
 
