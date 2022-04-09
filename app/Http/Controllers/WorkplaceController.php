@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Workplace;
 use App\Dashboard;
 use Illuminate\Http\Request;
-use App\Workplace;
 
-class DashboardController extends Controller
+
+class WorkplaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +16,8 @@ class DashboardController extends Controller
      */
     public function index($slug = null)
     {
-        //return view("Dashboard.index");
-        //$query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
-        //$dashboard = $query->withTrashed()->oldest('name')->paginate(5);
         $workplaces = Workplace::all();
-        return view('Dashboard.index');
+        return view('Workplace.index', compact('workplaces'));
     }
 
     /**
@@ -31,7 +29,7 @@ class DashboardController extends Controller
     {
         $workplaces = Workplace::all();
         //return view('Dashboard.create', compact('workplaces'))->with(Dashboard::all());
-        return view('Dashboard.create');
+        return view('Workplace.create');
     }
 
     /**
@@ -44,11 +42,11 @@ class DashboardController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'workplace_id' => 'required|numeric',
+            'user_id' => 'required|numeric',
         ]);
         $dashboard = Dashboard::create($validatedData);
    
-        return redirect('/dashboard')->with('success', 'Show is successfully saved');
+        return redirect('/workplaces')->with('success', 'Workplace is successfully saved');
     }
 
     /**
@@ -95,9 +93,9 @@ class DashboardController extends Controller
     {
         // Delete dashboard that exist
 
-        $dashboard = Dashboard::find($id);
-        $dashboard->delete();
+        $workplace = Workplace::find($id);
+        $workplace->delete();
 
-        Dashboard::destroy($id);
+        Workplace::destroy($id);
     }
 }

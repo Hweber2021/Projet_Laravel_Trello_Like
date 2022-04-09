@@ -35,7 +35,7 @@ Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('dashboards')->as('dashboards.')->middleware('auth')->group(function() {
     Route::get('/', 'DashboardController@index')->name('index');
@@ -44,4 +44,13 @@ Route::prefix('dashboards')->as('dashboards.')->middleware('auth')->group(functi
     Route::put('/update/{id}', 'DashboardController@update')->name('update');
     Route::delete('/delete/{id}', 'DashboardController@delete')->name('delete');
     Route::get('/create', 'DashboardController@create')->name('create');
+});
+
+Route::prefix('workplaces')->as('workplaces.')->middleware('auth')->group(function() {
+    Route::get('/', 'WorkplaceController@index')->name('index');
+    Route::get('/show/{id}', 'WorkplaceController@show')->name('show');
+    Route::post('/store', 'WorkplaceController@store')->name('store');
+    Route::put('/update/{id}', 'WorkplaceController@update')->name('update');
+    Route::delete('/delete/{id}', 'WorkplaceController@delete')->name('delete');
+    Route::get('/create', 'WorkplaceController@create')->name('create');
 });

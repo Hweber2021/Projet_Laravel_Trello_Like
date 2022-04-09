@@ -7,20 +7,22 @@
             <div class="card">
                 <div class="card-header">
                     <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        <p id="workplaceTittle"> {{{ $workplace->name }}}</p>
+                        <h2 id="workplaceTittle">Vos espaces de travail</h2>
                     </a>
-                    <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
-                        <p id="btnAddDashboard"> + </p>
-                    </a>
+                    <td>
+                        <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
+                            <p id="btnAddDashboard"> + </p>
+                        </a>
+                        <p>Nouvel espace</p>
+                    </td>
                 </div>
-
                 <div class="card-body">
-                    @foreach($dashboards as $dashboard)
+                    @foreach($workplaces as $workplace)
                     <tr>
-                        <td>{{ $dashboard->name }}</td>
-                        <td>{{ $dashboard->created_at }}</td>
+                        <td>{{ $workplace->name }}</td>
+                        <td>{{ $workplace->created_at }}</td>
                         <td>
-                            <form action="{{ route('dashboards.delete', $dashboard->dashboard_id)}}" method="post">
+                            <form action="{{ route('workplaces.delete', $workplace->workplace_id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>
