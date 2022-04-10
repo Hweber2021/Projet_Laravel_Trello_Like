@@ -22,22 +22,22 @@ Class Workplace extends Model
     // Is ket auto-incrementing ?
     public $incrementing = TRUE;
 
-    public $fillable = [
-        'name',
+    protected $fillable = [
         'user_id',
+        'name',
     ];
 
-    public function user()
+    protected function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function dashboard()
+    protected function dashboard()
     {
         return $this->hasMany(Dashboard::class);
     }
 
-    public static function getWithUser()
+    protected static function getWithUser()
     {
         return Workplace::with('user');
     }

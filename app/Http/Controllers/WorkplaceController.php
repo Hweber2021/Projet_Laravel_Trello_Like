@@ -28,8 +28,8 @@ class WorkplaceController extends Controller
      */
     public function create()
     {
-        $workplaces = Workplace::all();
-        return view('Workplace.create');
+        $users = User::all();
+        return view('Workplace.create', compact('users'));
     }
 
     /**
@@ -42,6 +42,7 @@ class WorkplaceController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
+            'user_id' => 'required|numeric',
         ]);
 
         Workplace::create($validatedData);

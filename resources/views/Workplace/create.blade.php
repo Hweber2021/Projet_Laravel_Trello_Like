@@ -30,11 +30,16 @@
                                 <label for="name">Donnee un nom à votre Espace de travail:</label>
                                 <input type="text" class="form-control" name="name"/>
                             </div>
-                            <div class="fields">
-                                <label for="user_id">Donnee le numéro de l'utilisateur:</label>
-                                <input type="number" class="form-control" name="user_id"/>
+                            <div class="field">
+                                <label class="label">Propriétaire</label>
+                                <div class="select">
+                                    <select name="user_id">
+                                        @foreach($users as $user)
+                                            <option value="{{ $user->id }}">{{ $user->email }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
                         <button type="submit" class="btn btn-primary">Créer</button>
                     </form>
                 </div>
