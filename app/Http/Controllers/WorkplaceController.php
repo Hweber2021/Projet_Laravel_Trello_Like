@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Workplace;
 use App\Dashboard;
+use App\User;
 use Illuminate\Http\Request;
 
 
@@ -28,7 +29,6 @@ class WorkplaceController extends Controller
     public function create()
     {
         $workplaces = Workplace::all();
-        //return view('Dashboard.create', compact('workplaces'))->with(Dashboard::all());
         return view('Workplace.create');
     }
 
@@ -42,11 +42,11 @@ class WorkplaceController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'user_id' => 'required|numeric',
         ]);
-        $dashboard = Dashboard::create($validatedData);
+
+        Workplace::create($validatedData);
    
-        return redirect('/workplaces')->with('success', 'Workplace is successfully saved');
+        return redirect('/workplaces')->with('success', 'Les modifications ont été sauvegardés.');
     }
 
     /**
@@ -57,7 +57,7 @@ class WorkplaceController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Workplace.show',compact('workplaces'));
     }
 
     /**
@@ -68,7 +68,8 @@ class WorkplaceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $workplace = Workplace::findOrFail($id);
+        return view('edit', compact('workplace'));
     }
 
     /**
@@ -80,7 +81,12 @@ class WorkplaceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        Workplace::whereId($id)->update($validatedData);
+
+        return redirect('/workplaces')->with('success', 'Espace de travail modifié avec succès');
     }
 
     /**
@@ -89,13 +95,16 @@ class WorkplaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
-        // Delete dashboard that exist
-
-        $workplace = Workplace::find($id);
+        $workplace = Workplace::findOrFail($id);
         $workplace->delete();
 
-        Workplace::destroy($id);
+        return redirect()->route('workplaces.index')->with('success', 'Espace de travail supprimé');
+    }
+
+    public function getUser()
+    {
+        $user = $this->getUser();
     }
 }

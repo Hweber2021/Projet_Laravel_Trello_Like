@@ -273,3 +273,9 @@ h2 {
   background-color: #2D7D90;
   color: white;
 }
+
+#btnNewWorkplace {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}

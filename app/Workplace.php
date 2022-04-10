@@ -23,8 +23,8 @@ Class Workplace extends Model
     public $incrementing = TRUE;
 
     public $fillable = [
-        'user_id',
         'name',
+        'user_id',
     ];
 
     public function user()
@@ -39,6 +39,6 @@ Class Workplace extends Model
 
     public static function getWithUser()
     {
-        return Dashboard::with('user');
+        return Workplace::with('user');
     }
 }
