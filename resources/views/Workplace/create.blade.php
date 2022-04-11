@@ -25,14 +25,13 @@
                     <form method="POST" action="{{ route('workplaces.store') }}">
                         <div class="form-group">
                             @csrf
-
                             <div class="fields">
-                                <label for="name">Donnee un nom à votre Espace de travail:</label>
+                                <label for="name">Nom de votre Espace de travail :</label>
                                 <input type="text" class="form-control" name="name"/>
                             </div>
                             <div class="field">
-                                <label class="label">Propriétaire</label>
-                                <div class="select">
+                                <div class="select"> 
+                                 <label for="user_id" class="label">Propriétaire</label>
                                     <select name="user_id">
                                         @foreach($users as $user)
                                             <option value="{{ $user->id }}">{{ $user->email }}</option>

@@ -148,9 +148,10 @@
   color: white;
   text-decoration: none;
   background-color: cyan;
-  margin: 5px;
-  border-radius: 30px;
   text-align: center;
+  margin: 7px;
+  border-radius: 30px;
+  padding: 5px;
 }
 
 #btnPasswordForget {
