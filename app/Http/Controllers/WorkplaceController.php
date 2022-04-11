@@ -17,7 +17,7 @@ class WorkplaceController extends Controller
      */
     public function index($slug = null)
     {
-        $workplaces = Workplace::all();
+        $workplaces = Workplace::getWithUser();
         return view('Workplace.index', compact('workplaces'));
     }
 

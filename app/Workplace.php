@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Auth;
 
 Class Workplace extends Model 
 {
@@ -22,23 +23,24 @@ Class Workplace extends Model
     // Is ket auto-incrementing ?
     public $incrementing = TRUE;
 
-    protected $fillable = [
+    public $fillable = [
         'user_id',
         'name',
     ];
 
-    protected function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    protected function dashboard()
+    public function dashboard()
     {
         return $this->hasMany(Dashboard::class);
     }
 
-    protected static function getWithUser()
+    public static function getWithUser()
     {
-        return Workplace::with('user');
+        $user_id = Auth::user()->id;
+        return Workplace::with('user')->where('user_id', 'LIKE', $user_id)->get();
     }
 }
