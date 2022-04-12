@@ -26,12 +26,11 @@
                         <div class="form-group">
                             @csrf
                             <div class="fields">
-                                <label for="name">Nom de votre Espace de travail :</label>
-                                <input type="text" class="form-control" name="name"/>
+                                <input type="text" class="form-control" name="name" placeholder="Nom de votre espace"/>
                             </div>
                             <div class="field">
                                 <div class="select"> 
-                                 <label for="user_id" class="label">Propriétaire</label>
+                                 <label for="user_id" class="label-user">Propriétaire :</label><br>
                                     <select name="user_id">
                                         @foreach($users as $user)
                                             <option value="{{ $user->id }}">{{ $user->email }}</option>
@@ -39,7 +38,7 @@
                                     </select>
                                 </div>
                             </div>
-                        <button type="submit" class="btn btn-primary">Créer</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton">Confirmation</button>
                     </form>
                 </div>
             </div>

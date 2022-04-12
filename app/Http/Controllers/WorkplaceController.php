@@ -70,7 +70,7 @@ class WorkplaceController extends Controller
     public function edit($id)
     {
         $workplace = Workplace::findOrFail($id);
-        return view('edit', compact('workplace'));
+        return view('Workplace.edit', compact('workplace'));
     }
 
     /**
@@ -86,7 +86,6 @@ class WorkplaceController extends Controller
             'name' => 'required|max:255',
         ]);
         Workplace::whereId($id)->update($validatedData);
-
         return redirect('/workplaces')->with('success', 'Espace de travail modifié avec succès');
     }
 

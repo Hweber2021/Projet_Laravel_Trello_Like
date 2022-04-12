@@ -25,6 +25,10 @@
           <label for="email_user" id="email_label">Adresse mail :</label><br>
           <input type="text" id="email_user" name="email_user" value="{{ Auth::user()->email }}" disabled>
         </div>
+
+        <div class="card-body-profile" id="user_workplaces">
+          <a id="workplaceIndexLink" href="{{ route('workplaces.index') }}">Mes workplaces</a>
+        </div>
       </div>
   </div>
 @endsection

@@ -35,12 +35,88 @@
   border-radius: 30px;
 }
 
+.card-body-workplace
+{
+  margin: auto;
+  padding: 60px;
+  display: flex;
+  width: 800px;
+}
+
+#workplaces 
+{
+  width: 300px;
+  background-color: #57CC99;
+  color: white;
+  padding: 30px;
+  margin: 20px;
+  text-align: center;
+  display: grid;
+  border-radius: 30px;
+}
+
+#btnDeleteWorkplace
+{
+  background-color: #E34421;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.navbar-workplace
+{
+  text-decoration: none;
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+#btnAddWorkplace
+{
+  background-color: #57CC99;
+  border-radius: 30px;
+  color: black;
+  width: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.linkDashboardIndex
+{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  text-align: left;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.linkWorkplaceEdit
+{
+  background-color: grey;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .title
 {
   font-family: Arial, Helvetica, sans-serif;
   width: 750;
   color: black;
   margin-left: 30px;
+}
+
+#title
+{
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  left: 30px;
+  top: 30px;
+  color: black;
 }
 
 .homepage-text-center
@@ -131,6 +207,23 @@
   text-align: center;
   color: #2D7D90;
   margin-bottom: 25px;
+}
+
+.form-control
+{
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.label-user
+{
+  color: white;
+  font-size: 22px;
 }
 
 .form-check-input
@@ -291,6 +384,22 @@ h2
   border-radius: 20px;
   padding: 10px;
   width: 740px;
+}
+
+#user_workplaces 
+{
+  margin-top: 40px;
+  text-align: center;
+}
+
+#workplaceIndexLink
+{
+  text-decoration: none;
+  height: 26px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #38A3A5;
+  color: white;
 }
 
 #user_email
