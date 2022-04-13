@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Workplace;
 
 Class Dashboard extends Model 
 {
@@ -33,6 +34,12 @@ Class Dashboard extends Model
 
     public static function getWithWorkplace()
     {
-        return Dashboard::with('workplace');
+        $workplace_id = Workplace::$primaryKey;
+        return Dashboard::with('workplace')->where('workplace_id', 'LIKE', $workplace_id)->get();
+    }
+
+    public function lists()
+    {
+        return $this->hasMany(Lists::class);
     }
 }

@@ -31,7 +31,7 @@
                             <div class="field">
                                 <div class="select"> 
                                  <label for="user_id" class="label-user">Propriétaire :</label><br>
-                                    <select name="user_id">
+                                    <select name="user_id" class="selectUser">
                                         @foreach($users as $user)
                                             <option value="{{ $user->id }}">{{ $user->email }}</option>
                                         @endforeach

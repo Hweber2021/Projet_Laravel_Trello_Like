@@ -6,9 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
-                        <p id="workplaceTittle"> {{{ $workplace->name }}}</p>
-                    </a>
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
                         <p id="btnAddDashboard"> + </p>
                     </a>
@@ -20,7 +17,7 @@
                         <td>{{ $dashboard->name }}</td>
                         <td>{{ $dashboard->created_at }}</td>
                         <td>
-                            <form action="{{ route('dashboards.delete', $dashboard->dashboard_id)}}" method="post">
+                            <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

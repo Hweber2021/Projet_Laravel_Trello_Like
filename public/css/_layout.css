@@ -22,6 +22,8 @@
 }
 
 .card-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
   background-color: #57CC99;
   margin: auto;
   padding: 60px;
@@ -32,9 +34,8 @@
 
 .card-body-workplace {
   margin: auto;
-  padding: 60px;
   display: flex;
-  width: 800px;
+  justify-content: center;
 }
 
 #workplaces {
@@ -46,6 +47,13 @@
   text-align: center;
   display: grid;
   border-radius: 30px;
+}
+
+.selectUser {
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 5px;
+  margin-top: 5px;
 }
 
 #btnDeleteWorkplace {

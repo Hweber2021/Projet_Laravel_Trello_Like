@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Workplace;
 use App\Dashboard;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 
@@ -15,7 +16,7 @@ class WorkplaceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug = null)
+    public function index()
     {
         $workplaces = Workplace::getWithUser();
         return view('Workplace.index', compact('workplaces'));
@@ -28,7 +29,7 @@ class WorkplaceController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+        $users = User::getAuthenticateUser();
         return view('Workplace.create', compact('users'));
     }
 
@@ -56,7 +57,7 @@ class WorkplaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Workplace $workplaces)
     {
         return view('Workplace.show',compact('workplaces'));
     }
@@ -67,9 +68,8 @@ class WorkplaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Workplace $workplace)
     {
-        $workplace = Workplace::findOrFail($id);
         return view('Workplace.edit', compact('workplace'));
     }
 
@@ -85,8 +85,8 @@ class WorkplaceController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
         ]);
-        Workplace::whereId($id)->update($validatedData);
-        return redirect('/workplaces')->with('success', 'Espace de travail modifié avec succès');
+        Workplace::where('worplace_id', 'LIKE', $id)->update($validatedData);
+        return redirect()->route('workplaces.index')->with('success', 'Espace de travail modifié avec succès');
     }
 
     /**

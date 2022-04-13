@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -60,5 +61,11 @@ class User extends Authenticatable
     public function workplaces()
     {
         return $this->hasMany(Workplace::class);
+    }
+
+    public static function getAuthenticateUser()
+    {
+        $user_id = Auth::user()->id;
+        return User::where('id', 'LIKE', $user_id)->get();
     }
 }

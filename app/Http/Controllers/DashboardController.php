@@ -13,13 +13,11 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug = null)
+    public function index()
     {
-        //return view("Dashboard.index");
-        //$query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
-        //$dashboard = $query->withTrashed()->oldest('name')->paginate(5);
         $workplaces = Workplace::all();
-        return view('Dashboard.index');
+        $dashboards = Dashboard::all();
+        return view('Dashboard.index', compact('dashboards'));
     }
 
     /**
@@ -91,13 +89,12 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
         // Delete dashboard that exist
-
-        $dashboard = Dashboard::find($id);
+        $dashboard = Dashboard::findOrFail($id);
         $dashboard->delete();
 
-        Dashboard::destroy($id);
+        return redirect()->route('dashboards.index')->with('success', 'Espace de travail supprimé');
     }
 }

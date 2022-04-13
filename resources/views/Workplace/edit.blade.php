@@ -12,14 +12,18 @@
                 </ul>
             </div><br />
         @endif
-        <form method="post" action="{{ route('workplaces.update', $workplace->workplace_id) }}">
+        <form action="{{ route('workplaces.update', $workplace->workplace_id) }}">
+            @csrf
+            @method('PATCH')
+
             <div class="form-group">
-                @csrf
-                @method('PATCH')
                 <label for="workplace_name">Nom de votre espace :</label>
                 <input type="text" class="form-control" name="workplace_name" value="{{ $workplace->name }}"/>
             </div>
-            <button type="submit" class="btn btn-primary">Mise à jour de votre espace</button>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-primary" id="submitButton">Mise à jour</button>
+            </div>        
         </form>
     </div>
 @endsection
