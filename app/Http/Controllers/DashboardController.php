@@ -15,8 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $workplaces = Workplace::all();
-        $dashboards = Dashboard::all();
+        $dashboards = Dashboard::getWithWorkplace();
         return view('Dashboard.index', compact('dashboards'));
     }
 
@@ -29,7 +28,7 @@ class DashboardController extends Controller
     {
         $workplaces = Workplace::all();
         //return view('Dashboard.create', compact('workplaces'))->with(Dashboard::all());
-        return view('Dashboard.create');
+        return view('Dashboard.create', compact('workplaces'));
     }
 
     /**

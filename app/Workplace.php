@@ -43,5 +43,4 @@ Class Workplace extends Model
         $user_id = Auth::user()->id;
         return Workplace::with('user')->where('user_id', 'LIKE', $user_id)->get();
     }
-
 }

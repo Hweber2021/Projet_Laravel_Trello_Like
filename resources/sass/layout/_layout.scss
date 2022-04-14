@@ -70,7 +70,8 @@
   background-color: #E34421;
   color: white;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 22px;
+  padding: 5px;
   margin-top: 20px;
 }
 
@@ -92,6 +93,13 @@
   text-align: center;
 }
 
+#labelWorkplaceCreate
+{
+  position: relative;
+  left: 70px;
+  top: 67px;
+}
+
 .linkDashboardIndex
 {
   text-decoration: none;
@@ -107,9 +115,11 @@
   background-color: grey;
   color: white;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 22px;
+  padding: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .title

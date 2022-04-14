@@ -29,13 +29,12 @@ Class Dashboard extends Model
 
     public function workplace()
     {
-        return $this->belongsTo(Workplace::class);
+        return $this->belongsTo(Workplace::class, 'workplace_id');
     }
 
     public static function getWithWorkplace()
     {
-        $workplace_id = Workplace::$primaryKey;
-        return Dashboard::with('workplace')->where('workplace_id', 'LIKE', $workplace_id)->get();
+        return Dashboard::with('workplace')->get();
     }
 
     public function lists()

@@ -8,6 +8,7 @@
                 <div class="card-header-workplace">
                     <h1 id="title">Vos espaces de travail</h1>
                     <td>
+                        <label for="btnAddWorkplace" id="labelWorkplaceCreate">Nouvel Espace de travail</label>
                         <a class="navbar-workplace"  href="{{ route('workplaces.create') }}">
                             <p id="btnAddWorkplace"> + </p>
                         </a>

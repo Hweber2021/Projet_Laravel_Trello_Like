@@ -25,10 +25,11 @@
                     <form method="POST" action="{{ route('dashboards.store') }}">
                         <div class="form-group">
                             @csrf
-
                             <div class="fields">
-                                <label for="name">Donnee un nom à votre tableau:</label>
-                                <input type="text" class="form-control" name="name"/>
+                                <input type="text" class="form-control" name="name" placeholder="Nom de votre nouveau tableau"/>
+                            </div>
+                            <div class="field">
+                            
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Créer le tableau</button>
