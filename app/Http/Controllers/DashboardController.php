@@ -13,10 +13,16 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug = null)
     {
-        $dashboards = Dashboard::getWithWorkplace();
-        return view('Dashboard.index', compact('dashboards'));
+        $query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
+        $dashboards = $query->oldest('name')->paginate(7);
+        $workplaces = Workplace::all();
+       /* $dashboards = Dashboard::whereHas('workplace', function($q) {
+            $q->where('workplace_id', );
+        })->get();*/
+
+        return view('Dashboard.index', compact('dashboards', 'workplaces', 'slug'));
     }
 
     /**
@@ -27,7 +33,6 @@ class DashboardController extends Controller
     public function create()
     {
         $workplaces = Workplace::all();
-        //return view('Dashboard.create', compact('workplaces'))->with(Dashboard::all());
         return view('Dashboard.create', compact('workplaces'));
     }
 
@@ -43,9 +48,9 @@ class DashboardController extends Controller
             'name' => 'required|max:255',
             'workplace_id' => 'required|numeric',
         ]);
-        $dashboard = Dashboard::create($validatedData);
+        Dashboard::create($validatedData);
    
-        return redirect('/dashboard')->with('success', 'Show is successfully saved');
+        return redirect('/dashboards')->with('success', 'Show is successfully saved');
     }
 
     /**

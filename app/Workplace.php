@@ -15,7 +15,7 @@ Class Workplace extends Model
     public $table = 'workplaces';
 
     // primary key of the table
-    public $primaryKey = 'workplace_id';
+    protected $primaryKey = 'workplace_id';
 
     // key type of the auto-incrementing primary key
     public $keyType = 'int';
@@ -42,5 +42,15 @@ Class Workplace extends Model
     {
         $user_id = Auth::user()->id;
         return Workplace::with('user')->where('user_id', 'LIKE', $user_id)->get();
+    }
+
+    public function getQualifiedKeyName()
+    {
+        return $this->getTable().'.'.$this->getKeyName();
+    }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
     }
 }

@@ -6,6 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
+                    <a class="navbar-brand" href="{{ route('workplaces.index') }}">
+                        <p id="btnWorkplaceIndex"> <- </p>
+                    </a>
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
                         <p id="btnAddDashboard"> + </p>
                     </a>
@@ -16,6 +19,7 @@
                     <tr>
                         <td>{{ $dashboard->name }}</td>
                         <td>{{ $dashboard->created_at }}</td>
+                        <td>{{ $dashboard->workplace->user->username }}</td>
                         <td>
                             <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
                                 @csrf

@@ -41,4 +41,14 @@ Class Dashboard extends Model
     {
         return $this->hasMany(Lists::class);
     }
+
+    public function getQualifiedKeyName()
+    {
+        return $this->getTable().'.'.$this->getKeyName();
+    }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
+    }
 }

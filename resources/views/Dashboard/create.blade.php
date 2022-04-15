@@ -29,7 +29,14 @@
                                 <input type="text" class="form-control" name="name" placeholder="Nom de votre nouveau tableau"/>
                             </div>
                             <div class="field">
-                            
+                                <label class="label">Espace de travail</label>
+                                <div class="select">
+                                    <select name="workplace_id">
+                                        @foreach($workplaces as $workplace)
+                                            <option value="{{ $workplace->workplace_id }}">{{ $workplace->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Créer le tableau</button>
