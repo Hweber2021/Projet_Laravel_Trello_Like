@@ -28,11 +28,21 @@ Class Lists extends Model
 
     public function dashboard()
     {
-        return $this->belongsTo(AppDashboard::class);
+        return $this->belongsTo(Dashboard::class);
     }
 
     public static function getWithDashboard()
     {
-        return Lists::with('dashboard');
+        return Lists::with('dashboard')->get();
+    }
+
+    public function getQualifiedKeyName()
+    {
+        return $this->getTable().'.'.$this->getKeyName();
+    }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
     }
 }

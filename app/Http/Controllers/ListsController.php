@@ -2,27 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Dashboard;
 use Illuminate\Http\Request;
-use App\Workplace;
 
-class DashboardController extends Controller
+class ListsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug = null)
+    public function index()
     {
-        $query = $slug ? Workplace::whereSlug($slug)->firstOrFail()->dashboards() : Dashboard::query();
-        $dashboards = $query->oldest('name')->paginate(7);
-        $workplaces = Workplace::all();
-       /* $dashboards = Dashboard::whereHas('workplace', function($q) {
-            $q->where('workplace_id', );
-        })->get();*/
-
-        return view('Dashboard.index', compact('dashboards', 'workplaces', 'slug'));
+        //
     }
 
     /**
@@ -32,8 +23,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        $workplaces = Workplace::all();
-        return view('Dashboard.create', compact('workplaces'));
+        //
     }
 
     /**
@@ -44,13 +34,7 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'workplace_id' => 'required|numeric',
-        ]);
-        Dashboard::create($validatedData);
-   
-        return redirect('/dashboards')->with('success', 'Show is successfully saved');
+        //
     }
 
     /**
@@ -59,9 +43,9 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Dashboard $dashboard)
+    public function show($id)
     {
-        return view('Dashboard.show', compact('dashboard'));
+        //
     }
 
     /**
@@ -95,10 +79,6 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        // Delete dashboard that exist
-        $dashboard = Dashboard::findOrFail($id);
-        $dashboard->delete();
-
-        return redirect()->route('dashboards.index')->with('success', 'Espace de travail supprimé');
+        //
     }
 }

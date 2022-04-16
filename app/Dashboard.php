@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use App\Workplace;
 
@@ -29,7 +30,7 @@ Class Dashboard extends Model
 
     public function workplace()
     {
-        return $this->belongsTo(Workplace::class, 'workplace_id');
+        return $this->belongsTo(Workplace::class);
     }
 
     public static function getWithWorkplace()

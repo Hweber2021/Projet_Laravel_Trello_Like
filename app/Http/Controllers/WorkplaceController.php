@@ -6,6 +6,7 @@ use App\Workplace;
 use App\Dashboard;
 use App\User;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 
@@ -57,9 +58,14 @@ class WorkplaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Workplace $workplaces)
+    public function show(Workplace $workplace)
     {
-        return view('Workplace.show',compact('workplaces'));
+        //$dashboard = $workplace->dashboard->name;
+        $dashboard_name = DB::table('dashboards')->select('name')->where('workplace_id', '=', $workplace->workplace_id)->get();
+        $dashboard_update = DB::table('dashboards')->select('updated_at')->where('workplace_id', '=', $workplace->workplace_id)->get();
+    
+
+        return view('Workplace.show',compact('workplace', 'dashboard_name', 'dashboard_update'));
     }
 
     /**
