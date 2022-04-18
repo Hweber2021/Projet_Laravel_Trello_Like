@@ -12,8 +12,8 @@ Class Card extends Model
     protected $fillable = [
         'user_id',
         'num_list',
-        'label_id',
         'name',
+        'label',
         'description'
     ];
 
@@ -27,8 +27,4 @@ Class Card extends Model
         $this->belongsTo('App\List');
     }
 
-    public function label()
-    {
-        $this->belongsTo('App\Label');
-    }
 }

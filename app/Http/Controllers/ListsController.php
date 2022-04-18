@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Dashboard;
+use App\Lists;
 use Illuminate\Http\Request;
 
 class ListsController extends Controller
@@ -13,7 +15,8 @@ class ListsController extends Controller
      */
     public function index()
     {
-        //
+        $listes = Lists::all();
+        return view("Lists.index", compact('listes'));
     }
 
     /**
@@ -23,7 +26,8 @@ class ListsController extends Controller
      */
     public function create()
     {
-        //
+        $dashboards = Dashboard::all();
+        return view('Lists.create', compact('dashboards'));
     }
 
     /**
@@ -34,7 +38,13 @@ class ListsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'dashboard_id' => 'required|numeric',
+        ]);
+        Lists::create($validatedData);
+   
+        return redirect()->route('lists.index')->with('success', 'Liste créer avec succès');
     }
 
     /**
@@ -79,6 +89,10 @@ class ListsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Delete List that exist
+        $liste = Lists::findOrFail($id);
+        $liste->delete();
+
+        return redirect()->route('lists.index')->with('success', 'Liste supprimée');
     }
 }

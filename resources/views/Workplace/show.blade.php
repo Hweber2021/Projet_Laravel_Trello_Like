@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header-workplace">
                     <h1 id="title">{{ $workplace->name }}</h1>
+                    <a class="navbar-brand" href='{{ route('workplaces.index') }}' >Retour à vos espace</a>
                 </div>
                 <div class="card-body-workplace">
                     <div id="workplaces">

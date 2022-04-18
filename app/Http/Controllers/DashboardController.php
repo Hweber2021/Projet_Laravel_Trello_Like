@@ -50,7 +50,7 @@ class DashboardController extends Controller
         ]);
         Dashboard::create($validatedData);
    
-        return redirect('/dashboards')->with('success', 'Show is successfully saved');
+        return redirect('/dashboards')->with('success', 'Tableau créer avec succès');
     }
 
     /**

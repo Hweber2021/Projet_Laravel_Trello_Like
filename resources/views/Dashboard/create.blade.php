@@ -29,7 +29,7 @@
                                 <input type="text" class="form-control" name="name" placeholder="Nom de votre nouveau tableau"/>
                             </div>
                             <div class="field">
-                                <label class="label">Espace de travail</label>
+                                <label for="workplace_id" class="label">Espace de travail</label>
                                 <div class="select">
                                     <select name="workplace_id">
                                         @foreach($workplaces as $workplace)

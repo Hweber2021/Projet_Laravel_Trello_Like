@@ -16,11 +16,11 @@
                 <br>
                 <div class="card-body-dashboard">
                     <tr id="listBody">
-                        <td><td>
+                        <td>
+                            <a href="{{ route('lists.index') }}">Listes</a>
+                        <td>
                     </tr>
                 </div>
-
-
             </div>
         </div>
     </div>

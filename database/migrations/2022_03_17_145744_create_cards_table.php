@@ -16,13 +16,12 @@ class CreateCardsTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->bigIncrements('card_id');
             $table->string('name');
+            $table->string('label');
             $table->string('description');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('num_list');
-            $table->unsignedBigInteger('label_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('num_list')->references('num_list')->on('lists')->onDelete('cascade');
-            $table->foreign('label_id')->references('label_id')->on('labels')->onDelete('cascade');
             $table->timestamps();
         });
     }

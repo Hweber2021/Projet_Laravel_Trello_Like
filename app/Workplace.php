@@ -53,4 +53,5 @@ Class Workplace extends Model
     {
         return $this->primaryKey;
     }
+
 }

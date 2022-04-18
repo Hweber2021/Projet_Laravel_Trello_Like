@@ -17,7 +17,7 @@
                 <div class="card-body">
                     @foreach($dashboards as $dashboard)
                     <tr>
-                        <td><a class="navbar-brand" href="{{ route('dashboards.show', $dashboard->dashboard_id) }}">{{ $dashboard->name }}</a></td>
+                        <td><a class="navbar-brand" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
                         <td>{{ $dashboard->created_at }}</td>
                         <td>
                             <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
