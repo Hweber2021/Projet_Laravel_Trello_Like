@@ -19,12 +19,22 @@ Class Card extends Model
 
     public function user()
     {
-        $this->belongsTo('App\User');
+        $this->belongsTo(User::class);
     }
 
     public function list()
     {
-        $this->belongsTo('App\List');
+        $this->belongsTo(Lists::class, 'num_list');
+    }
+
+    public function getQualifiedKeyName()
+    {
+        return $this->getTable().'.'.$this->getKeyName();
+    }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
     }
 
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Auth;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 Class Workplace extends Model 
 {
@@ -33,9 +34,14 @@ Class Workplace extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function dashboard()
+    public function dashboards(): HasMany
     {
-        return $this->hasMany(Dashboard::class);
+        return $this->hasMany(Dashboard::class, 'workplace_id', 'id');
+    }
+
+    public function getDashboards()
+    {
+        return $this->dashboards()->where('workplace_id', '=', $this->primaryKey);
     }
 
     public static function getWithUser()

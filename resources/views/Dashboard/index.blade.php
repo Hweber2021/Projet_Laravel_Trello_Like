@@ -7,26 +7,29 @@
             <div class="card">
                 <div class="card-header">
                     <a class="navbar-brand" href="{{ route('workplaces.index') }}">
-                        <p id="btnWorkplaceIndex"> <- </p>
+                        <p id="btnWorkplaceIndex"> Retour au Espaces </p>
                     </a>
+                    <label for="btnAddDashboard" id="labelWorkplaceCreate">Nouveau Tableau</label>
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
                         <p id="btnAddDashboard"> + </p>
                     </a>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body-dashboard">
                     @foreach($dashboards as $dashboard)
-                    <tr>
-                        <td><a class="navbar-brand" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
-                        <td>{{ $dashboard->created_at }}</td>
-                        <td>
-                            <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                        <div id="dashboards">
+                            <tr>
+                                <td><a class="navbar-brand" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
+                                <td>{{ $dashboard->created_at }}</td>
+                                <td>
+                                    <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </div>
                     @endforeach
                 </div>
             </div>

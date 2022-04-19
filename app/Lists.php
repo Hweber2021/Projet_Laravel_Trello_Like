@@ -28,7 +28,7 @@ Class Lists extends Model
 
     public function dashboard()
     {
-        return $this->belongsTo(Dashboard::class);
+        return $this->belongsTo(Dashboard::class, 'dashboard_id');
     }
 
     public static function getWithDashboard()

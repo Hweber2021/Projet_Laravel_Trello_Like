@@ -60,11 +60,12 @@ class WorkplaceController extends Controller
      */
     public function show(Workplace $workplace)
     {
-        //$dashboard = $workplace->dashboard->name;
-        $dashboard_name = DB::table('dashboards')->select('name')->where('workplace_id', '=', $workplace->workplace_id)->get();
-        $dashboard_update = DB::table('dashboards')->select('updated_at')->where('workplace_id', '=', $workplace->workplace_id)->get();
+        //$workplace->load('dashboard');
+        $dashboards = Dashboard::find(1)->where('workplace_id', '=', $workplace->workplace_id)->get();
+        //$dashboard_name = DB::table('dashboards')->select('name')->where('workplace_id', '=', $workplace->workplace_id)->get();
+        //$dashboard_update = DB::table('dashboards')->select('updated_at')->where('workplace_id', '=', $workplace->workplace_id)->get();
 
-        return view('Workplace.show',compact('workplace', 'dashboard_name', 'dashboard_update'));
+        return view('Workplace.show',compact('workplace', 'dashboards'));
     }
 
     /**

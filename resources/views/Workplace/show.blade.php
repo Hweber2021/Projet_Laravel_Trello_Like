@@ -10,12 +10,13 @@
                     <a class="navbar-brand" href='{{ route('workplaces.index') }}' >Retour à vos espace</a>
                 </div>
                 <div class="card-body-workplace">
-                    <div id="workplaces">
+                @foreach ($dashboards as $dashboard)    
+                    <div id="workplacesDashboards">
                         <tr>
-                            <td>{{ $dashboard_name }}</td>
-                            <td>{{ $dashboard_update }}</td>
+                            <td>{{ $dashboard->name }}</td>
                         </tr>
                     </div>
+                @endforeach
                 </div>
             </div>
         </div>

@@ -45,6 +45,24 @@
   justify-content: center;
 }
 
+.card-body-dashboard
+{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#dashboards
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 30px;
+  width: 600px;
+  background-color: #57CC99;
+}
+
 #workplaces 
 {
   width: 300px;
