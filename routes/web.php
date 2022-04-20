@@ -43,3 +43,5 @@ Route::resource('workplaces', 'WorkplaceController')->middleware('auth');
 Route::resource('dashboards', 'DashboardController')->middleware('auth');
 
 Route::resource('lists', 'ListsController')->middleware('auth');
+
+Route::resource('cards', 'CardController')->middleware('auth');

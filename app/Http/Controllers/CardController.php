@@ -46,7 +46,7 @@ class CardController extends Controller
             'user_id' => 'required|numeric',
             'num_lists' => 'required|numeric',
         ]);
-        Dashboard::create($validatedData);
+        Card::create($validatedData);
    
         return redirect('/cards')->with('success', 'Carte créer avec succès');
     }
@@ -93,6 +93,9 @@ class CardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $card = Card::findOrFail($id);
+        $card->delete();
+
+        return redirect()->route('cards.index')->with('success', 'Carte supprimé');
     }
 }
