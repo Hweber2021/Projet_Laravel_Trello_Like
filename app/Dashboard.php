@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use App\Workplace;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 Class Dashboard extends Model 
@@ -31,7 +32,7 @@ Class Dashboard extends Model
 
     public function workplace(): HasOne
     {
-        return $this->hasOne(Workplace::class, 'id', 'workplace_id');
+        return $this->hasOne(Workplace::class, 'workplace_id');
     }
 
     public static function getWithWorkplace()
@@ -39,9 +40,9 @@ Class Dashboard extends Model
         return Dashboard::with('workplace')->get();
     }
 
-    public function lists()
+    public function lists(): HasMany
     {
-        return $this->hasMany(Lists::class, 'num_list');
+        return $this->hasMany(Lists::class, 'dashboard_id');
     }
 
     public  function getQualifiedKeyName()

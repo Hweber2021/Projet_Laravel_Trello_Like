@@ -34,14 +34,14 @@ Class Workplace extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function dashboards(): HasMany
+    public function dashboard(): HasMany
     {
-        return $this->hasMany(Dashboard::class, 'workplace_id', 'id');
+        return $this->hasMany(Dashboard::class, 'workplace_id');
     }
 
     public function getDashboards()
     {
-        return $this->dashboards()->where('workplace_id', '=', $this->primaryKey);
+        return $this->dashboard()->where('workplace_id', '=', $this->primaryKey);
     }
 
     public static function getWithUser()

@@ -40,17 +40,26 @@
 
 .card-body-dashboard {
   margin: auto;
-  display: flex;
-  justify-content: center;
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+#card-menu-dashboard {
+  background-color: lightgrey;
+  height: 80px;
+  width: 600px;
+  vertical-align: middle;
 }
 
 #dashboards {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
   padding: 20px;
+  margin: px;
   text-align: center;
   border-radius: 30px;
   width: 600px;
+  color: white;
   background-color: #57CC99;
 }
 
@@ -74,6 +83,17 @@
 
 #btnDeleteWorkplace {
   background-color: #E34421;
+  border: #E34421;
+  color: white;
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+#btnDeleteDashboard {
+  background-color: #E34421;
+  border: #E34421;
   color: white;
   border-radius: 30px;
   font-size: 22px;
@@ -90,6 +110,17 @@
 
 #btnAddWorkplace {
   background-color: #57CC99;
+  text-decoration: none;
+  border-radius: 30px;
+  color: black;
+  width: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#btnAddDashboard {
+  background-color: #57CC99;
+  text-decoration: none;
   border-radius: 30px;
   color: black;
   width: 30px;

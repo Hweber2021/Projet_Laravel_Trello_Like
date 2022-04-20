@@ -20,7 +20,7 @@
                     <div id="workplaces">
                         <tr>
                             <td>
-                                <a class="linkDashboardIndex" href="{{ route('dashboards.index') }}">
+                                <a class="linkDashboardIndex" href="{{ route('workplaces.show', $workplace->workplace_id) }}">
                                     {{ $workplace->name }}
                                 </a>
                             </td>

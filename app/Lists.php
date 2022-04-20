@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -26,9 +27,9 @@ Class Lists extends Model
         'name',
     ];
 
-    public function dashboard()
+    public function dashboard(): HasOne
     {
-        return $this->belongsTo(Dashboard::class, 'dashboard_id');
+        return $this->hasOne(Dashboard::class, 'dashboard_id');
     }
 
     public static function getWithDashboard()

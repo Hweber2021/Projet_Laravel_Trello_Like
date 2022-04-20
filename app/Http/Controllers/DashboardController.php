@@ -61,18 +61,19 @@ class DashboardController extends Controller
      */
     public function show(Dashboard $dashboard)
     {
+        $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $dashboard->dashboard_id)->firstOrFail();
         return view('Dashboard.show', compact('dashboard'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified dashboard.
      *
-     * @param  int  $id
+     * @param  Dashboard dashboard
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dashboard $dashboard)
     {
-        //
+        return view('Dashboard.edit', compact('dashboard'));
     }
 
     /**
@@ -84,7 +85,11 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        Dashboard::where('dashboard_id', 'LIKE', $id)->update($validatedData);
+        return redirect()->route('workplaces.show')->with('success', 'Tableau modifié avec succès');
     }
 
     /**
