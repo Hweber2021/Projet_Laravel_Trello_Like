@@ -27,7 +27,7 @@
                                 <form action="{{ route('lists.destroy', $liste->num_list)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit" id="btnDeleteWorkplace">Suppression</button>
+                                    <button class="btn btn-danger" type="submit" id="btnDelete">Suppression</button>
                                 </form>
                             </td>
                         </tr>

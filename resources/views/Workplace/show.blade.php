@@ -18,7 +18,7 @@
                         <div id="dashboards">
                             <tr>
                                 <td>
-                                    <a class="linkDashboardIndex" href="{{ route('dashboards.show', $dashboard->dashboard_id) }}">
+                                    <a class="linkIndex" href="{{ route('dashboards.show', $dashboard->dashboard_id) }}">
                                         {{ $dashboard->name }}
                                     </a>
                                 </td><br>
@@ -28,7 +28,7 @@
                                     <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit" id="btnDeleteDashboard">Supprimer</button>
+                                        <button class="btn btn-danger" type="submit" id="btnDelete">Supprimer</button>
                                     </form>
                                 </td>
                             </tr>

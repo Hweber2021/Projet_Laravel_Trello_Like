@@ -17,8 +17,8 @@ class CardController extends Controller
      */
     public function index()
     {
-        $card = Card::all();
-        return view('Card.index', compact('card'));
+        $cards = Card::all();
+        return view('Card.index', compact('cards'));
     }
 
     /**
@@ -43,8 +43,10 @@ class CardController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
+            'label' => 'required|max:255',
+            'description' => 'required',
             'user_id' => 'required|numeric',
-            'num_lists' => 'required|numeric',
+            'num_list' => 'required|numeric',
         ]);
         Card::create($validatedData);
    
@@ -57,9 +59,9 @@ class CardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Card $card)
     {
-        //
+        return view('Card.show', compact('card'));
     }
 
     /**
@@ -68,9 +70,9 @@ class CardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Card $card)
     {
-        //
+        return view('Card.edit', compact('card'));
     }
 
     /**
@@ -91,9 +93,10 @@ class CardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dashboard $dashboard ,$id)
     {
         $card = Card::findOrFail($id);
+        //$dashboard = Dashboard::with('lists')->where('num_list', '=', $card->num_list)->firstOrFail();
         $card->delete();
 
         return redirect()->route('cards.index')->with('success', 'Carte supprimé');

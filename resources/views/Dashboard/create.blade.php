@@ -26,7 +26,7 @@
                         <div class="form-group">
                             @csrf
                             <div class="fields">
-                                <input type="text" class="form-control" name="name" placeholder="Nom de votre nouveau tableau"/>
+                                <input type="text" class="form-control" name="name" placeholder="Nom de votre tableau"/>
                             </div>
                             <div class="field">
                                 <label for="workplace_id" class="label">Espace de travail</label>

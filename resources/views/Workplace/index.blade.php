@@ -20,13 +20,12 @@
                     <div id="workplaces">
                         <tr>
                             <td>
-                                <a class="linkDashboardIndex" href="{{ route('workplaces.show', $workplace->workplace_id) }}">
+                                <a class="linkIndex" href="{{ route('workplaces.show', $workplace->workplace_id) }}">
                                     {{ $workplace->name }}
                                 </a>
                             </td>
-                            <td>{{ $workplace->updated_at  }}</td>
                             <td>
-                                <a class="linkWorkplaceEdit" href="{{ route('workplaces.edit', $workplace->workplace_id) }}">
+                                <a class="linkEdit" href="{{ route('workplaces.edit', $workplace->workplace_id) }}">
                                     Paramètres
                                 </a>
                             </td>
@@ -34,7 +33,7 @@
                                 <form action="{{ route('workplaces.destroy', $workplace->workplace_id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit" id="btnDeleteWorkplace">Suppression</button>
+                                    <button class="btn btn-danger" type="submit" id="btnDelete">Suppression</button>
                                 </form>
                             </td>
                         </tr>

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Auth;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -58,9 +59,14 @@ class User extends Authenticatable
     }
     
 
-    public function workplaces()
+    public function workplaces(): HasMany
     {
         return $this->hasMany(Workplace::class);
+    }
+
+    public function cards(): HasMany
+    {
+        return $this->hasMany(Card::class);
     }
 
     public static function getAuthenticateUser()

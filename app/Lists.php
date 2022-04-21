@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -35,6 +36,11 @@ Class Lists extends Model
     public static function getWithDashboard()
     {
         return Lists::with('dashboard')->get();
+    }
+
+    public function cards(): HasMany
+    {
+        return $this->hasMany(Card::class, 'num_list');
     }
 
     public function getQualifiedKeyName()

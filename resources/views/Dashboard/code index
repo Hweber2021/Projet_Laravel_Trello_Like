@@ -19,13 +19,13 @@
                     @foreach($dashboards as $dashboard)
                         <div id="dashboards">
                             <tr>
-                                <td><a class="navbar-brand" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
+                                <td><a class="linkIndex" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
                                 <td>{{ $dashboard->created_at }}</td>
                                 <td>
                                     <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                        <button class="btn btn-danger" id="btnDelete" type="submit">Supression</button>
                                     </form>
                                 </td>
                             </tr>

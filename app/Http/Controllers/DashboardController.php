@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dashboard;
+use App\Lists;
 use Illuminate\Http\Request;
 use App\Workplace;
 
@@ -42,15 +43,17 @@ class DashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Workplace $workplace)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'workplace_id' => 'required|numeric',
         ]);
-        Dashboard::create($validatedData);
+        $dashboard = Dashboard::create($validatedData);
+        $workplace = Workplace::with('dashboard')->where('workplace_id', '=', $dashboard->workplace_id)->firstOrFail();
+        
    
-        return redirect('/dashboards')->with('success', 'Tableau créer avec succès');
+        return redirect()->route('workplaces.show', [$workplace])->with('success', 'Tableau créer avec succès');
     }
 
     /**
@@ -62,7 +65,8 @@ class DashboardController extends Controller
     public function show(Dashboard $dashboard)
     {
         $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $dashboard->dashboard_id)->firstOrFail();
-        return view('Dashboard.show', compact('dashboard'));
+        $lists = Lists::with('cards')->firstOrFail();
+        return view('Dashboard.show', compact('dashboard', 'lists'));
     }
 
     /**
@@ -98,12 +102,12 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Workplace $workplace, $id)
     {
-        // Delete dashboard that exist
         $dashboard = Dashboard::findOrFail($id);
+        $workplace = Workplace::with('dashboard')->where('workplace_id', '=', $dashboard->workplace_id)->firstOrFail();
         $dashboard->delete();
 
-        return redirect()->route('dashboards.index')->with('success', 'Espace de travail supprimé');
+        return redirect()->route('workplaces.show', [$workplace])->with('success', 'Tableau supprimé');
     }
 }
