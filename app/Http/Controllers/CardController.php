@@ -39,7 +39,7 @@ class CardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Lists $list, Dashboard $dashboard)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
@@ -49,8 +49,7 @@ class CardController extends Controller
             'num_list' => 'required|numeric',
         ]);
         Card::create($validatedData);
-   
-        return redirect('/cards')->with('success', 'Carte créer avec succès');
+        return redirect()->route('cards.index')->with('success', 'Carte créer avec succès');
     }
 
     /**
@@ -67,12 +66,14 @@ class CardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Card $card
      * @return \Illuminate\Http\Response
      */
     public function edit(Card $card)
     {
-        return view('Card.edit', compact('card'));
+        $lists = Lists::all();
+
+        return view('Card.edit', compact('card', 'lists'));
     }
 
     /**
@@ -82,9 +83,14 @@ class CardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Card $card)
     {
-        //
+        $request->validate([
+            'num_list' => 'required|numeric',
+        ]);
+        $card->update($request->all());
+
+        return redirect()->route('cards.index')->with('success', 'Carte mise à jour');
     }
 
     /**

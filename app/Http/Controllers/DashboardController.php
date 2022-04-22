@@ -38,7 +38,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage and redirectt to specified Workplace.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -52,7 +52,6 @@ class DashboardController extends Controller
         $dashboard = Dashboard::create($validatedData);
         $workplace = Workplace::with('dashboard')->where('workplace_id', '=', $dashboard->workplace_id)->firstOrFail();
         
-   
         return redirect()->route('workplaces.show', [$workplace])->with('success', 'Tableau créer avec succès');
     }
 
@@ -93,7 +92,7 @@ class DashboardController extends Controller
             'name' => 'required|max:255',
         ]);
         Dashboard::where('dashboard_id', 'LIKE', $id)->update($validatedData);
-        return redirect()->route('workplaces.show')->with('success', 'Tableau modifié avec succès');
+        return redirect()->route('dashboards.show')->with('success', 'Tableau modifié avec succès');
     }
 
     /**

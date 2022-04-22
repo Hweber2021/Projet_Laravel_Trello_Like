@@ -8,12 +8,12 @@
                 <div class="card-header-workplace">
                     <h1 id="title">{{ $workplace->name }}</h1>
                     <a class="navbar-brand" href='{{ route('workplaces.index') }}' >Retour à vos espace</a>
-                    <label for="btnAddDashboard" id="labelWorkplaceCreate">Nouveau Tableau</label>
+                    <label for="btnAddDashboard" id="labelDashboardCreate">Nouveau Tableau</label>
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
                         <p id="btnAddDashboard"> + </p>
                     </a>
                 </div>
-                <div class="card-body-dashboard">  
+                <div class="card-body-workplace-dashboard">  
                     @foreach ($workplace->dashboard as $dashboard)
                         <div id="dashboards">
                             <tr>

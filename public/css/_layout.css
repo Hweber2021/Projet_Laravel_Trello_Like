@@ -46,42 +46,84 @@
   font-size: 22px;
 }
 
+.card-body-workplace-dashboard {
+  margin: auto;
+  width: 750px;
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.card-body-card {
+  margin: auto;
+  width: 500px;
+  background-color: #2D7D90;
+}
+
 .card-menu-dashboard {
   background-color: #FAF8F8;
   border: solid;
   border-color: #C6BDBD;
-  font-size: 30px;
+  font-size: 27px;
   border-radius: 20px;
   height: 60px;
-  margin: 5px;
-  text-align: left;
-  vertical-align: middle;
+  margin: 7px;
   padding: 5px;
+  display: flex;
 }
 
 .dashboard-body {
+  display: flex;
+  justify-content: center;
   background-color: #FAF8F8;
   border: solid;
   border-color: #C6BDBD;
   border-radius: 20px;
   margin: 10px;
+  height: auto;
 }
 
 #dashboard-content {
   background-color: #80ED99;
   width: 343px;
-  height: 289px;
+  height: 400px;
   border-radius: 20px;
   text-align: center;
   margin: 10px;
   padding: 10px;
 }
 
+#listHeader {
+  background-color: #2D7D90;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 #cards {
   background-color: #38A3A5;
-  border-radius: 30px;
+  border-radius: 10px;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.linkEditCard {
+  text-decoration: none;
+  color: white;
+}
+
+.linkEditCard:hover {
+  background-color: #57CC99;
+  border-radius: 20px;
   padding: 5px;
   margin: 5px;
 }
@@ -124,6 +166,35 @@
   margin-top: 20px;
 }
 
+#btnDeleteCards {
+  background-color: #E34421;
+  border: #E34421;
+  color: white;
+  border-radius: 20px;
+  font-size: 17px;
+  padding: 7px;
+  text-align: center;
+}
+
+#btnDeleteCards:hover {
+  background-color: #aa3217;
+}
+
+.btnEditList {
+  text-decoration: none;
+  color: white;
+}
+
+.btnEditList:hover {
+  background-color: #C6BDBD;
+  border: #C6BDBD;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 22px;
+  padding: 7px;
+}
+
 .navbar-workplace {
   text-decoration: none;
   position: relative;
@@ -155,6 +226,12 @@
   position: relative;
   left: 70px;
   top: 67px;
+}
+
+#labelDashboardCreate {
+  position: relative;
+  top: 67px;
+  right: 130px;
 }
 
 .linkIndex {
@@ -353,6 +430,30 @@
   color: black;
   font-size: 22px;
   margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.navbar-list-carte {
+  text-decoration: none;
+  color: white;
+  background-color: #57CC99;
+  padding: 7px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.navbar-list-carte:hover {
+  background-color: #C6BDBD;
+}
+
+.navbar-workplace-list {
+  text-decoration: none;
+  background-color: #57CC99;
+  color: black;
+  font-size: 22px;
+  margin: 5px;
+  padding: 10px;
   border-radius: 20px;
 }
 

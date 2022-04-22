@@ -17,7 +17,7 @@ class CreateDashboardsTable extends Migration
             $table->bigIncrements('dashboard_id');
             $table->string('name');
             $table->unsignedBigInteger('workplace_id');
-            $table->foreign('workplace_id')->references('workplace_id')->on('workplaces')->onDelete('cascade');
+            $table->foreign('workplace_id')->references('workplace_id')->on('workplaces')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

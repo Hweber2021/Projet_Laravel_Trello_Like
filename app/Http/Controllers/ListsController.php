@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ListsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Lists.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,7 +20,7 @@ class ListsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new List.
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,19 +36,20 @@ class ListsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Dashboard $dashboard)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'dashboard_id' => 'required|numeric',
         ]);
-        Lists::create($validatedData);
+        $list = Lists::create($validatedData);
+        $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $list->dashboard_id)->firstOrFail();
    
-        return redirect()->route('lists.index')->with('success', 'Liste créer avec succès');
+        return redirect()->route('dashboards.show', [$dashboard])->with('success', 'Liste créer avec succès');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified list.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -59,14 +60,14 @@ class ListsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified list.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Lists $list)
     {
-        //
+        return view('Lists.edit', compact('list'));
     }
 
     /**
@@ -82,17 +83,18 @@ class ListsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified List from storage and redirect to dashboard.
      *
+     * @param Dashboard $dashboard
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dashboard $dashboard, $id)
     {
-        // Delete List that exist
         $liste = Lists::findOrFail($id);
+        $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $liste->dashboard_id)->firstOrFail();
         $liste->delete();
 
-        return redirect()->route('lists.index')->with('success', 'Liste supprimée');
+        return redirect()->route('dashboards.show', [$dashboard])->with('success', 'Liste supprimée');
     }
 }

@@ -20,8 +20,8 @@ class CreateCardsTable extends Migration
             $table->text('description');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('num_list');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('num_list')->references('num_list')->on('lists')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('num_list')->references('num_list')->on('lists')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

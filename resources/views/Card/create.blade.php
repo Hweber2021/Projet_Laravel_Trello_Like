@@ -26,13 +26,19 @@
                         <div class="form-group">
                             @csrf
                             <div class="fields">
-                                <input type="text" class="form-control" name="name" placeholder="Nom de votre carte"/>
+                                <input type="text" class="form-control" name="name" placeholder="Nom de la tâche"/>
                             </div>
                             <div class="fields">
-                                <input type="text" class="form-control" name="label" placeholder="Label"/>
+                                <label for="label"></label>
+                                <select name="label" class="form-control">
+                                    <option value="Niveau de priorité"></option>
+                                    <option value="Faible"></option>
+                                    <option value="Moyen"></option>
+                                    <option value="Urgent"></option>
+                                </select>
                             </div>
                             <div class="fields">
-                                <input type="textarea" class="form-control" name="description">
+                                <input type="textarea" class="form-control" name="description" placeholder="Description de la tâche">
                             </div>
                             <div class="fields">
                                 <label for="user_id" class="label"></label>

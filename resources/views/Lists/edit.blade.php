@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <h2>Parametre de la carte {{ $card->name }}</h2>
+    <h2>Parametre de votre liste</h2>
     <div class="card-body">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -12,24 +12,15 @@
                 </ul>
             </div><br />
         @endif
-        <form action="{{ route('cards.update', $card->card_id) }}" method="POST">
+        <form action="{{ route('lists.update', $list->num_list) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div class="form-group">
-                <label for="description">Description :</label>
-                <input type="textarea" class="form-control" name="description" value="{{ $card->description }}"/>
+                <label id="nameLabel" for="name">Nom :</label>
+                <input type="textarea" class="form-control" name="name" value="{{ $list->name }}"/>
             </div>
             
-            <div class="form-group">
-            <label for="num_list">Liste :</label>
-                <select name="num_list">
-                    @foreach ($lists as $list)
-                        <option value="{{ $list->num_list }}">{{ $list->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
             <div class="form-submit">
                 <button type="submit" class="btn btn-primary" id="submitButton">Mise à jour</button>
             </div>        
