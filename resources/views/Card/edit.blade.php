@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <h2>Parametre de la carte {{ $card->name }}</h2>
+    <h2 id="navbar-brand">Parametre de la carte {{ $card->name }}</h2>
     <div class="card-body">
         @if ($errors->any())
             <div class="alert alert-danger">

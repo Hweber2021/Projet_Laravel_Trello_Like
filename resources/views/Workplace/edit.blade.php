@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <h2>Parametre de l'espace {{ $workplace->name }}</h2>
+    <h2 id="navbar-brand">Parametre de l'espace {{ $workplace->name }}</h2>
     <div class="card-body">
         @if ($errors->any())
             <div class="alert alert-danger">

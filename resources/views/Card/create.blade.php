@@ -11,7 +11,7 @@
                     </a>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body-create-card">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>

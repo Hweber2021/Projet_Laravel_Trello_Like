@@ -38,8 +38,20 @@
   margin-top: 60px;
 }
 
-
 .card-body
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  background-color: #57CC99;
+  margin: auto;
+  padding: 60px;
+  width: 500px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+.card-body-create-card
 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
@@ -554,6 +566,11 @@
   border-radius: 20px;
 }
 
+.navbar-list:hover
+{
+  background-color: #3da87a;
+}
+
 .navbar-list-carte
 {
   text-decoration: none;
@@ -578,6 +595,11 @@
   margin: 5px;
   padding: 10px;
   border-radius: 20px;
+}
+
+.navbar-workplace-list:hover
+{
+  background-color: #3da87a;
 }
 
 .nav-link
