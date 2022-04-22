@@ -74,12 +74,18 @@ class ListsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Lists  $list
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Lists $list)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        $list->update($request->all());
+        $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $list->dashboard_id)->firstOrFail();
+
+        return redirect()->route('dashboards.show', [$dashboard])->with('success', 'Liste mise à jour');
     }
 
     /**

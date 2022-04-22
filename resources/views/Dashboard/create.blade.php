@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a class="navbar-brand" href="{{ route('dashboards.index') }}">
+                    <a class="navbar-brand" href="{{ route('workplaces.index') }}">
                         <img src="/image/logo.png" alt="logo">
                     </a>
                 </div>
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Créer le tableau</button>
+                        <button type="submit" class="btn btn-primary" id='btnCreateDashboard'>Créer le tableau</button>
                     </form>
                 </div>
             </div>

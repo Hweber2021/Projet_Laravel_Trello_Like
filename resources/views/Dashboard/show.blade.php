@@ -30,6 +30,7 @@
                                     @foreach ($lists->cards as $card)
                                         <div id="cards">
                                             <tr>
+                                                <td>{{ $card->label }}</td>
                                                 <td><a class="linkEditCard" href="{{ route('cards.edit', $card->card_id) }}">{{ $card->name }}</a></td>
                                                 <td>
                                                     <form action="{{ route('cards.destroy', $card->card_id)}}" method="post">

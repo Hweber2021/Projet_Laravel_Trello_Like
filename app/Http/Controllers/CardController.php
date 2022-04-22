@@ -102,7 +102,7 @@ class CardController extends Controller
     public function destroy(Dashboard $dashboard ,$id)
     {
         $card = Card::findOrFail($id);
-        //$dashboard = Dashboard::with('lists')->where('num_list', '=', $card->num_list)->firstOrFail();
+        //$dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $card->lists->dashboard_id)->firstOrFail();
         $card->delete();
 
         return redirect()->route('cards.index')->with('success', 'Carte supprimé');

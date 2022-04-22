@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a class="navbar-brand" href="{{ route('cards.index') }}">
+                    <a class="navbar-brand-card-create" href="{{ route('cards.index') }}">
                         <img src="/image/logo.png" alt="logo">
                     </a>
                 </div>
@@ -29,20 +29,19 @@
                                 <input type="text" class="form-control" name="name" placeholder="Nom de la tâche"/>
                             </div>
                             <div class="fields">
-                                <label for="label"></label>
-                                <select name="label" class="form-control">
-                                    <option value="Niveau de priorité"></option>
-                                    <option value="Faible"></option>
-                                    <option value="Moyen"></option>
-                                    <option value="Urgent"></option>
+                                <label for="label" class="label">Niveau de priorité :</label><br>
+                                <select name="label" class="form-control-select">
+                                    <option value="Faible">Faible</option>
+                                    <option value="Moyen">Moyen</option>
+                                    <option value="Urgent">Urgent</option>
                                 </select>
                             </div>
                             <div class="fields">
                                 <input type="textarea" class="form-control" name="description" placeholder="Description de la tâche">
                             </div>
                             <div class="fields">
-                                <label for="user_id" class="label"></label>
                                 <div class="select">
+                                    <label for="user_id" class="label">Attribué à :</label>
                                     <select name="user_id">
                                         @foreach($users as $user)
                                             <option value="{{ $user->id }}">{{ $user->email }}</option>
@@ -50,6 +49,7 @@
                                     </select>
                                 </div>
                                 <div class="select">
+                                    <label for="num_list" class="label">Contenu dans :</label> 
                                     <select name="num_list">
                                         @foreach ($lists as $list)
                                             <option value="{{ $list->num_list }}">{{ $list->name }}</option>
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Ajouter la carte</button>
+                        <button type="submit" class="btn btn-primary" id="btnCreateCard">Ajouter la carte</button>
                     </form>
                 </div>
             </div>
