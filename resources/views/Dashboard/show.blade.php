@@ -8,8 +8,8 @@
                 <div class="card-body-dashboard-content">
                     <div class="card-menu-dashboard">
                         <td>{{ $dashboard->name }}</td>
-                        <td><a class="navbar-list"  href="{{ route('lists.create') }}">Ajoutez une liste</a></td>
-                        <td><a class="navbar-workplace-list" href="{{ route('workplaces.index') }}">Retour à vos espace</a></td>
+                        <td><a class="navbar-list"  href="{{ route('lists.create') }}">Ajouter une liste</a></td>
+                        <td><a class="navbar-workplace-list" href="{{ route('workplaces.index') }}">Retour à vos espaces</a></td>
                     </div>
                     <br>
                     <div class="dashboard-body">

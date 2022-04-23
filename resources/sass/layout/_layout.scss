@@ -196,6 +196,21 @@
   border-radius: 30px;
 }
 
+.linkWorkplaceIndex
+{
+  text-decoration: none;
+  color: black;
+  position: relative;
+  bottom: 90px;
+  left: 20px;
+}
+
+.linkWorkplaceIndex:hover
+{
+  text-decoration: none;
+  color: #C6BDBD;
+}
+
 .selectUser
 {
   border-radius: 30px;
@@ -291,6 +306,18 @@
 }
 
 #btnCreateCard
+{
+  background-color: #38A3A5;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 30px;
+  border-color: #38A3A5;
+}
+
+#btnCreateList
 {
   background-color: #38A3A5;
   color: white;
@@ -456,6 +483,11 @@
   margin-bottom: 25px;
 }
 
+.form-group
+{
+  color: white;
+}
+
 .form-control-select
 {
   width: 265px;
@@ -466,6 +498,19 @@
   margin-top: 10px;
   margin-bottom: 25px;
   color: #C6BDBD;
+}
+
+.form-control-textarea
+{
+  width: 450px;
+  height: 130px;
+  border-radius: 30px;
+  border: white;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  resize: none;
 }
 
 .label-user
@@ -705,6 +750,16 @@ h2
 }
 
 #workplaceIndexLink
+{
+  text-decoration: none;
+  height: 26px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #38A3A5;
+  color: white;
+}
+
+#cardIndexLink
 {
   text-decoration: none;
   height: 26px;

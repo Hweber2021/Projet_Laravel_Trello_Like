@@ -8,7 +8,7 @@
     <div class="flex-center position-ref full-height">
 
         <div class='title'>
-            <h1>Bienvenu sur BookYourWork l'environnement Kanban frendly</h1>
+            <h1>Bienvenue sur BookYourWork l'environnement Kanban frendly</h1>
         </div>
 
         <div class='homepage-text-center'>

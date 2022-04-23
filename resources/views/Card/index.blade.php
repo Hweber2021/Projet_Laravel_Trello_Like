@@ -12,24 +12,16 @@
                         <a class="navbar-workplace"  href="{{ route('cards.create') }}">
                             <p id="btnAddWorkplace"> + </p>
                         </a>
-                        
                     </td>
+                    <td><a class="linkWorkplaceIndex" href="{{ route('workplaces.index') }}">Retour à mes espaces</a></td>
                 </div>
                 <div class="card-body-workplace">
                     @foreach($cards as $card)
                     <div id="workplaces">
                         <tr>
                             <td>{{ $card->label }}</td>
-                            <td>
-                                <a class="linkIndex" href="{{ route('cards.show', $card->card_id) }}">
-                                    {{ $card->name }}
-                                </a>
-                            </td>
-                            <td>
-                                <a class="linkEdit" href="{{ route('cards.edit', $card->card_id) }}">
-                                    Paramètres
-                                </a>
-                            </td>
+                            <td><a class="linkIndex" href="{{ route('cards.show', $card->card_id) }}">{{ $card->name }}</a></td>
+                            <td><a class="linkEdit" href="{{ route('cards.edit', $card->card_id) }}">Paramètres</a></td>
                             <td>
                                 <form action="{{ route('cards.destroy', $card->card_id)}}" method="post">
                                     @csrf

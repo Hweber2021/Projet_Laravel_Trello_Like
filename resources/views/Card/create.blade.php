@@ -37,7 +37,7 @@
                                 </select>
                             </div>
                             <div class="fields">
-                                <input type="textarea" class="form-control" name="description" placeholder="Description de la tâche">
+                                <textarea class="form-control-textarea" name="description">Décrivez la tâche</textarea>
                             </div>
                             <div class="fields">
                                 <div class="select">

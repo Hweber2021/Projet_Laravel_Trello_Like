@@ -85,12 +85,12 @@ class WorkplaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Workplace $workplace)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required|max:255',
         ]);
-        Workplace::where('worplace_id', 'LIKE', $id)->update($validatedData);
+        $workplace->update($request->all());
         return redirect()->route('workplaces.index')->with('success', 'Espace de travail modifié avec succès');
     }
 

@@ -31,7 +31,7 @@
                             <div class="field">
                                 <label for="workplace_id" class="label">Espace de travail</label>
                                 <div class="select">
-                                    <select name="workplace_id">
+                                    <select name="workplace_id" class="form-control-select">
                                         @foreach($workplaces as $workplace)
                                             <option value="{{ $workplace->workplace_id }}">{{ $workplace->name }}</option>
                                         @endforeach

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <h2 id="navbar-brand">Parametre de la carte {{ $card->name }}</h2>
+    <h2 id="navbar-brand">Paramètres de la carte {{ $card->name }}</h2>
     <div class="card-body">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -17,13 +17,13 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="description">Description :</label>
-                <input type="textarea" class="form-control" name="description" value="{{ $card->description }}"/>
+                <label for="description">Description :</label><br>
+                <textarea class="form-control-textarea" name="description">{{ $card->description }}</textarea>
             </div>
             
             <div class="form-group">
             <label for="num_list">Liste :</label>
-                <select name="num_list">
+                <select name="num_list" class="form-control-select">
                     @foreach ($lists as $list)
                         <option value="{{ $list->num_list }}">{{ $list->name }}</option>
                     @endforeach

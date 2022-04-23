@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-      <h2>Profile</h2>
+      <h2>Profil</h2>
       <div class="centerInterface_profile">
 
         <div class="card-body-profile" id="user_baseInfo">
@@ -27,7 +27,11 @@
         </div>
 
         <div class="card-body-profile" id="user_workplaces">
-          <a id="workplaceIndexLink" href="{{ route('workplaces.index') }}">Mes workplaces</a>
+          <a id="workplaceIndexLink" href="{{ route('workplaces.index') }}">Mes Espaces</a>
+        </div>
+
+        <div class="card-body-profile" id="user_cards">
+          <a id="cardIndexLink" href="{{ route('cards.index') }}">Mes Cartes</a>
         </div>
       </div>
   </div>

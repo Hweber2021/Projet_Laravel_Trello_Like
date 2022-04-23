@@ -8,7 +8,7 @@
                 <div class="card-header-workplace">
                     <h1 id="title">{{ $workplace->name }}</h1>
                     <a class="navbar-brand" href='{{ route('workplaces.index') }}' >Retour à vos espace</a>
-                    <label for="btnAddDashboard" id="labelDashboardCreate">Nouveau Tableau</label>
+                    <label for="btnAddDashboard" id="labelDashboardCreate">Nouveau tableau</label>
                     <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
                         <p id="btnAddDashboard"> + </p>
                     </a>

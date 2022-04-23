@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("content")
-    <h2 id="navbar-brand">Parametre de l'espace {{ $workplace->name }}</h2>
+    <h2 id="navbar-brand">Paramètres de l'espace {{ $workplace->name }}</h2>
     <div class="card-body">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -12,13 +12,13 @@
                 </ul>
             </div><br />
         @endif
-        <form action="{{ route('workplaces.update', $workplace->workplace_id) }}">
+        <form action="{{ route('workplaces.update', $workplace->workplace_id) }}" method="POST">
             @csrf
-            @method('PATCH')
+            @method('PUT')
 
             <div class="form-group">
-                <label for="workplace_name">Nom de votre espace :</label>
-                <input type="text" class="form-control" name="workplace_name" value="{{ $workplace->name }}"/>
+                <label for="name">Nom de votre espace :</label>
+                <input type="text" class="form-control" name="name" value="{{ $workplace->name }}"/>
             </div>
 
             <div class="form-submit">

@@ -6,9 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a class="navbar-brand" href="{{ route('lists.index') }}">
-                        <img src="/image/logo.png" alt="logo">
-                    </a>
+                    <a class="navbar-brand"><img src="/image/logo.png" alt="logo"></a>
                 </div>
 
                 <div class="card-body">
@@ -31,7 +29,7 @@
                             <div class="fields">
                                 <label for="dashboard_id" class="label" >Tableau</label>
                                 <div class="select">
-                                    <select name="dashboard_id" class="selectDashboard">
+                                    <select name="dashboard_id" class="form-control-select">
                                         @foreach($dashboards as $dashboard)
                                             <option value="{{ $dashboard->dashboard_id }}">{{ $dashboard->name }}</option>
                                         @endforeach
@@ -39,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Créer la liste</button>
+                        <button type="submit" class="btn btn-primary" id="btnCreateList">Créer la liste</button>
                     </form>
                 </div>
             </div>

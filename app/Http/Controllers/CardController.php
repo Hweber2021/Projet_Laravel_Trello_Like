@@ -49,7 +49,7 @@ class CardController extends Controller
             'num_list' => 'required|numeric',
         ]);
         Card::create($validatedData);
-        return redirect()->route('cards.index')->with('success', 'Carte créer avec succès');
+        return redirect()->route('workplaces.index')->with('success', 'Carte créer avec succès');
     }
 
     /**
@@ -90,7 +90,7 @@ class CardController extends Controller
         ]);
         $card->update($request->all());
 
-        return redirect()->route('cards.index')->with('success', 'Carte mise à jour');
+        return redirect()->route('workplaces.index')->with('success', 'Carte mise à jour');
     }
 
     /**
@@ -105,6 +105,6 @@ class CardController extends Controller
         //$dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $card->lists->dashboard_id)->firstOrFail();
         $card->delete();
 
-        return redirect()->route('cards.index')->with('success', 'Carte supprimé');
+        return redirect()->route('workplaces.index')->with('success', 'Carte supprimé');
     }
 }
