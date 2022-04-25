@@ -3,6 +3,12 @@
   src: url('../../fonts/Sora/Sora-VariableFont_wght.ttf');
 }
 
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
+
 #menu
 {
   background-color: #80ED99;
@@ -94,8 +100,15 @@
 .card-body-card
 {
   margin: auto;
-  width: 500px;
-  background-color: #2D7D90;
+  color: white;
+  width: 800px;
+  height: 420px;
+  position: relative;
+  top: 70px;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #38A3A5;
 }
 
 .card-menu-dashboard
@@ -513,6 +526,20 @@
   resize: none;
 }
 
+#description_area
+{
+  width: 300px;
+  height: 130px;
+  border-radius: 30px;
+  border: white;
+  background-color: white;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
 .label-user
 {
   color: white;
@@ -747,6 +774,17 @@ h2
 {
   margin-top: 40px;
   text-align: center;
+  position: relative;
+  left: 90px;
+}
+
+#user_cards
+{
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  right: 120px;
+  bottom: 63px;
 }
 
 #workplaceIndexLink
@@ -766,6 +804,7 @@ h2
   padding: 10px;
   border-radius: 20px;
   background-color: #38A3A5;
+  position: relative;
   color: white;
 }
 
@@ -781,6 +820,14 @@ h2
   border-radius: 20px;
   padding: 10px;
   width: 740px;
+}
+
+#label_card
+{
+  font-size: 22px;
+  height: 24px;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .nav-item

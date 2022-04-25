@@ -6,15 +6,23 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header-card">
-                    <h1 id="title">{{ $card->name }}</h1>
                     <a class="navbar-brand" href='{{ route('cards.index') }}' >Retour à vos cartes</a>
                 </div>
+
                 <div class="card-body-card">  
-                    <tr>
-                        <td>{{ $card->created_at }}</td>
-                        <td>{{ $card->description }}</td>
-                        <td>{{ $card->num_list }}</td>
-                    </tr>
+                    <div class="card-body-show" id="card_name">
+                        <h1 id="cardName">{{ $card->name }}</h1>
+                    </div>
+
+                    <div class="card-body-show" id="card_label">
+                        <label for="label" id="card_label">Niveau de priorité :</label><br>
+                        <input type="text" id="label_card" name="label" value="{{ $card->label }}" disabled>
+                    </div>
+
+                     <div class="card-body-show" id="user_email">
+                        <label for="description" id="secription-labrel">Description :</label><br>
+                        <textarea id="description_area" name="description" disabled>{{ $card->description }}</textarea>
+                    </div>
                 </div>
             </div>
         </div>

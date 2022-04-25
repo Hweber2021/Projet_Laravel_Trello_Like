@@ -36,6 +36,7 @@
                                                     <form action="{{ route('cards.destroy', $card->card_id)}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
+                                                        <input type="hidden" value="{{ $dashboard->dashboard_id }}" name="dashboardId"/>
                                                         <button class="btn btn-danger" id="btnDeleteCards" type="submit">-</button>
                                                     </form>
                                                 </td>

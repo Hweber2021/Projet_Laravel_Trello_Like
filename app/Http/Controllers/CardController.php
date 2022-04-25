@@ -39,7 +39,7 @@ class CardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Lists $list, Dashboard $dashboard)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
@@ -48,6 +48,7 @@ class CardController extends Controller
             'user_id' => 'required|numeric',
             'num_list' => 'required|numeric',
         ]);
+        $dashboard_id = $request->dashboardId;
         Card::create($validatedData);
         return redirect()->route('workplaces.index')->with('success', 'Carte créer avec succès');
     }
@@ -55,7 +56,7 @@ class CardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Card  $card
      * @return \Illuminate\Http\Response
      */
     public function show(Card $card)
@@ -80,7 +81,7 @@ class CardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Card  $card
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Card $card)
@@ -88,6 +89,7 @@ class CardController extends Controller
         $request->validate([
             'num_list' => 'required|numeric',
         ]);
+        $dashboard_id = $request->dashboardId;
         $card->update($request->all());
 
         return redirect()->route('workplaces.index')->with('success', 'Carte mise à jour');
@@ -99,12 +101,13 @@ class CardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dashboard $dashboard ,$id)
+    public function destroy(Request $request ,$id)
     {
         $card = Card::findOrFail($id);
         //$dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $card->lists->dashboard_id)->firstOrFail();
+        $dashboard_id = $request->dashboardId;
         $card->delete();
 
-        return redirect()->route('workplaces.index')->with('success', 'Carte supprimé');
+        return redirect()->route('dashboards.show', ['dashboard' => $dashboard_id])->with('success', 'Carte supprimé');
     }
 }
