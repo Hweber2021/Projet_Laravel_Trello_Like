@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center position-ref full-height" id="homepage">
 
         <div class='title'>
             <h1>Bienvenue sur BookYourWork l'environnement Kanban frendly</h1>
