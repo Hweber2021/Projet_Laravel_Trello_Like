@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header-card">
-                    <a class="navbar-brand" href='{{ route('cards.index') }}' >Retour à vos cartes</a>
+                    <a class="navbar-brand-card-index" href='{{ route('cards.index') }}' >Retour à vos cartes</a>
                 </div>
 
                 <div class="card-body-card">  

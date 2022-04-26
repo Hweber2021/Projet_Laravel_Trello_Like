@@ -104,7 +104,7 @@ html, body
   width: 800px;
   height: 420px;
   position: relative;
-  top: 70px;
+  top: 50px;
   padding: 15px;
   border-radius: 20px;
   text-align: center;
@@ -510,7 +510,7 @@ html, body
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 25px;
-  color: #C6BDBD;
+  color: grey;
 }
 
 .form-control-textarea
@@ -616,6 +616,19 @@ html, body
   text-decoration: none;
   left: 10px;
   bottom: 28px;
+}
+
+.navbar-brand-card-index
+{
+  position: relative;
+  color: white;
+  background-color: #3da87a;
+  padding: 10px;
+  text-decoration: none;
+  left: 15px;
+  top: 40px;
+  border-radius: 20px;
+  font-size: 20px;
 }
 
 .navbar-collapse

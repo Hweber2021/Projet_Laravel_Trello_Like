@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="btnCreateCard">Ajouter la carte</button>
+                        <button type="submit" class="btn btn-primary" id="btnCreateCard">Ajouter la tâche</button>
                     </form>
                 </div>
             </div>
