@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class WorkplaceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the workplace.
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,7 +24,7 @@ class WorkplaceController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new workplace.
      *
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +35,7 @@ class WorkplaceController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created workplace in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -53,24 +53,21 @@ class WorkplaceController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified workplace.
      *
-     * @param  int  $id
+     * @param  Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
     public function show(Workplace $workplace)
     {
         $workplace = Workplace::with('dashboard')->where('workplace_id', '=', $workplace->workplace_id)->firstOrFail();
-        //$dashboard_name = DB::table('dashboards')->select('name')->where('workplace_id', '=', $workplace->workplace_id)->get();
-        //$dashboard_update = DB::table('dashboards')->select('updated_at')->where('workplace_id', '=', $workplace->workplace_id)->get();
-
         return view('Workplace.show',compact('workplace'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified workplace.
      *
-     * @param  int  $id
+     * @param  Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
     public function edit(Workplace $workplace)
@@ -79,7 +76,7 @@ class WorkplaceController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified workspace in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -95,7 +92,7 @@ class WorkplaceController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified workspace from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
