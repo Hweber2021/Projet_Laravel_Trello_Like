@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Auth;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -15,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
+    public $fillable = [
         'name', 'surname', 'username', 'email', 'password',
     ];
 
@@ -24,7 +26,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
+    public $hidden = [
         'password', 'remember_token',
     ];
 
@@ -33,7 +35,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
+    public $casts = [
         'email_verified_at' => 'datetime',
     ];
 
@@ -57,8 +59,19 @@ class User extends Authenticatable
     }
     
 
-    public function workplaces()
+    public function workplaces(): HasMany
     {
-        
+        return $this->hasMany(Workplace::class);
+    }
+
+    public function cards(): HasMany
+    {
+        return $this->hasMany(Card::class);
+    }
+
+    public static function getAuthenticateUser()
+    {
+        $user_id = Auth::user()->id;
+        return User::where('id', 'LIKE', $user_id)->get();
     }
 }

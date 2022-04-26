@@ -17,7 +17,7 @@ class CreateListsTable extends Migration
             $table->bigIncrements('num_list');
             $table->string('name');
             $table->unsignedBigInteger('dashboard_id');
-            $table->foreign('dashboard_id')->references('dashboard_id')->on('dashboards')->onDelete('cascade');
+            $table->foreign('dashboard_id')->references('dashboard_id')->on('dashboards')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -1,0 +1,39 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <a class="navbar-brand" href="{{ route('workplaces.index') }}">
+                        <p id="btnWorkplaceIndex"> Retour au Espaces </p>
+                    </a>
+                    <label for="btnAddDashboard" id="labelWorkplaceCreate">Nouveau Tableau</label>
+                    <a class="navbar-brand"  href="{{ route('dashboards.create') }}">
+                        <p id="btnAddDashboard"> + </p>
+                    </a>
+                </div>
+
+                <div class="card-body-dashboard">
+                    @foreach($dashboards as $dashboard)
+                        <div id="dashboards">
+                            <tr>
+                                <td><a class="linkIndex" href="{{ route('lists.index') }}">{{ $dashboard->name }}</a></td>
+                                <td>{{ $dashboard->created_at }}</td>
+                                <td>
+                                    <form action="{{ route('dashboards.destroy', $dashboard->dashboard_id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" id="btnDelete" type="submit">Supression</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

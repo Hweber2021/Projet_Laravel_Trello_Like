@@ -4,31 +4,51 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 Class Card extends Model
 {
+
+    // Table of the model
+    public $table = 'cards';
+
+    // primary key of the table
+    public $primaryKey = 'card_id';
+
+    // key type of the auto-incrementing primary key
+    public $keyType = 'int';
+
+    // Is ket auto-incrementing ?
+    public $incrementing = TRUE;
+
     protected $fillable = [
         'user_id',
         'num_list',
-        'label_id',
         'name',
+        'label',
         'description'
     ];
 
-    public function user()
+    public function user(): HasOne
     {
-        $this->belongsTo('App\User');
+      return $this->hasOne(User::class);
     }
 
-    public function list()
+    public function list(): HasOne
     {
-        $this->belongsTo('App\List');
+       return $this->hasOne(Lists::class, 'num_list');
     }
 
-    public function label()
+    public function getQualifiedKeyName()
     {
-        $this->belongsTo('App\Label');
+        return $this->getTable().'.'.$this->getKeyName();
     }
+
+    public function getKeyName()
+    {
+        return $this->primaryKey;
+    }
+
 }

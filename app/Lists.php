@@ -4,19 +4,18 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Auth;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-Class Workplace extends Model 
+Class Lists extends Model 
 {
-
     // Table of the model
-    public $table = 'workplaces';
+    public $table = 'lists';
 
     // primary key of the table
-    protected $primaryKey = 'workplace_id';
+    public $primaryKey = 'num_list';
 
     // key type of the auto-incrementing primary key
     public $keyType = 'int';
@@ -25,29 +24,23 @@ Class Workplace extends Model
     public $incrementing = TRUE;
 
     public $fillable = [
-        'user_id',
+        'dashboard_id',
         'name',
     ];
 
-    public function user()
+    public function dashboard(): HasOne
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(Dashboard::class, 'dashboard_id');
     }
 
-    public function dashboard(): HasMany
+    public static function getWithDashboard()
     {
-        return $this->hasMany(Dashboard::class, 'workplace_id');
+        return Lists::with('dashboard')->get();
     }
 
-    public function getDashboards()
+    public function cards(): HasMany
     {
-        return $this->dashboard()->where('workplace_id', '=', $this->primaryKey);
-    }
-
-    public static function getWithUser()
-    {
-        $user_id = Auth::user()->id;
-        return Workplace::with('user')->where('user_id', 'LIKE', $user_id)->get();
+        return $this->hasMany(Card::class, 'num_list');
     }
 
     public function getQualifiedKeyName()
@@ -59,5 +52,4 @@ Class Workplace extends Model
     {
         return $this->primaryKey;
     }
-
 }

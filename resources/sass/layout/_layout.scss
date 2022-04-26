@@ -3,6 +3,12 @@
   src: url('../../fonts/Sora/Sora-VariableFont_wght.ttf');
 }
 
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
+
 #menu
 {
   background-color: #80ED99;
@@ -11,9 +17,22 @@
   height: 121px;
 }
 
+.select
+{
+  font-size: 22px;
+  border-radius: 10px;
+  color: white;
+}
+
 .card
 {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.field
+{
+  color: white;
   font-size: 22px;
 }
 
@@ -27,6 +46,8 @@
 
 .card-body
 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
   background-color: #57CC99;
   margin: auto;
   padding: 60px;
@@ -35,12 +56,353 @@
   border-radius: 30px;
 }
 
+
+.card-body-create-card
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  background-color: #57CC99;
+  margin: auto;
+  padding: 60px;
+  width: 500px;
+  text-align: center;
+  border-radius: 30px;
+  position: relative;
+  bottom: 50px;
+}
+
+.card-body-workplace
+{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body-dashboard
+{
+  margin: auto;
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.card-body-workplace-dashboard
+{
+  margin: auto;
+  width: 750px;
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.card-body-card
+{
+  margin: auto;
+  color: white;
+  width: 800px;
+  height: 420px;
+  position: relative;
+  top: 50px;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #38A3A5;
+}
+
+.card-menu-dashboard
+{
+  background-color: #FAF8F8;
+  border: solid;
+  border-color: #C6BDBD;
+  font-size: 27px;
+  border-radius: 20px;
+  height: 60px;
+  margin: 7px;
+  padding: 5px;
+  display: flex;
+}
+
+.dashboard-body
+{
+  display: flex;
+  justify-content: center;
+  background-color: #FAF8F8;
+  border: solid;
+  border-color: #C6BDBD;
+  border-radius: 20px;
+  margin: 10px;
+  height: auto;
+}
+
+#dashboard-content
+{
+  background-color: #80ED99;
+  width: 343px;
+  height: 400px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#listHeader
+{
+  background-color: #2D7D90;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#cards
+{
+  background-color: #38A3A5;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.linkEditCard
+{
+  text-decoration: none;
+  color: white;
+}
+
+.linkEditCard:hover
+{
+  background-color: #57CC99;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+#dashboards
+{
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 30px;
+  width: 600px;
+  color: white;
+  background-color: #57CC99;
+  
+}
+
+#workplaces 
+{
+  width: 300px;
+  background-color: #57CC99;
+  color: white;
+  padding: 30px;
+  margin: 20px;
+  text-align: center;
+  display: grid;
+  border-radius: 30px;
+}
+
+.linkWorkplaceIndex
+{
+  text-decoration: none;
+  color: black;
+  position: relative;
+  bottom: 90px;
+  left: 20px;
+}
+
+.linkWorkplaceIndex:hover
+{
+  text-decoration: none;
+  color: #C6BDBD;
+}
+
+.selectUser
+{
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+#btnDelete
+{
+  background-color: #E34421;
+  border: #E34421;
+  color: white;
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+#btnDeleteCards
+{
+  background-color: #E34421;
+  border: #E34421;
+  color: white;
+  border-radius: 20px;
+  font-size: 17px;
+  padding: 7px;
+  text-align: center;
+}
+
+#btnDeleteCards:hover
+{
+  background-color: #aa3217;
+}
+
+.btnEditList
+{
+  text-decoration: none;
+  color: white;
+}
+
+.btnEditList:hover
+{
+  background-color: #C6BDBD;
+  border: #C6BDBD;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 22px;
+  padding: 7px;
+}
+
+.navbar-workplace
+{
+  text-decoration: none;
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+#btnAddWorkplace
+{
+  background-color: #57CC99;
+  text-decoration: none;
+  border-radius: 30px;
+  color: black;
+  width: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#btnAddDashboard
+{
+  background-color: #57CC99;
+  text-decoration: none;
+  border-radius: 30px;
+  color: black;
+  width: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#btnCreateDashboard
+{
+  background-color: #38A3A5;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 30px;
+  border-color: #38A3A5;
+}
+
+#btnCreateCard
+{
+  background-color: #38A3A5;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 30px;
+  border-color: #38A3A5;
+}
+
+#btnCreateList
+{
+  background-color: #38A3A5;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 30px;
+  border-color: #38A3A5;
+}
+
+#labelWorkplaceCreate
+{
+  position: relative;
+  left: 70px;
+  top: 67px;
+}
+
+#labelDashboardCreate
+{
+  position: relative;
+  top: 67px;
+  right: 130px;
+}
+
+.linkIndex
+{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  text-align: left;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.linkEdit
+{
+  background-color: grey;
+  color: white;
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
 .title
 {
   font-family: Arial, Helvetica, sans-serif;
   width: 750;
   color: black;
   margin-left: 30px;
+}
+
+#title
+{
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  left: 30px;
+  top: 30px;
+  color: black;
+}
+
+main
+{
+  overflow: hidden;
+}
+
+#homepage
+{
+  overflow: hidden;
 }
 
 .homepage-text-center
@@ -133,6 +495,67 @@
   margin-bottom: 25px;
 }
 
+.form-control
+{
+  width: 265px;
+  height: 45px;
+  border-radius: 30px;
+  border: white;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group
+{
+  color: white;
+}
+
+.form-control-select
+{
+  width: 265px;
+  height: 45px;
+  border-radius: 20px;
+  border: white;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: grey;
+}
+
+.form-control-textarea
+{
+  width: 450px;
+  height: 130px;
+  border-radius: 30px;
+  border: white;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+#description_area
+{
+  width: 300px;
+  height: 130px;
+  border-radius: 30px;
+  border: white;
+  background-color: white;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.label-user
+{
+  color: white;
+  font-size: 22px;
+}
+
 .form-check-input
 {
   width: 20px;
@@ -142,6 +565,12 @@
 .form-check-label
 {
   color: white;
+}
+
+.label
+{
+  color: #FAF8F8;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #submitButton
@@ -167,9 +596,10 @@
   color: white;
   text-decoration: none;
   background-color: cyan;
-  margin: 5px;
-  border-radius: 30px;
   text-align: center;
+  margin: 7px;
+  border-radius: 30px;
+  padding: 5px;
 }
 
 #btnPasswordForget
@@ -183,8 +613,32 @@
 .navbar-brand
 {
   position: relative;
+  color: black;
+  text-decoration: none;
   top: 14px;
   left: 10px;
+}
+
+.navbar-brand-card-create
+{
+  position: relative;
+  color: black;
+  text-decoration: none;
+  left: 10px;
+  bottom: 28px;
+}
+
+.navbar-brand-card-index
+{
+  position: relative;
+  color: white;
+  background-color: #3da87a;
+  padding: 10px;
+  text-decoration: none;
+  left: 15px;
+  top: 40px;
+  border-radius: 20px;
+  font-size: 20px;
 }
 
 .navbar-collapse
@@ -194,6 +648,53 @@
   margin-right: 15px;
   position: relative;
   bottom: 50px;
+}
+
+.navbar-list
+{
+  text-decoration: none;
+  background-color: #57CC99;
+  color: black;
+  font-size: 22px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.navbar-list:hover
+{
+  background-color: #3da87a;
+}
+
+.navbar-list-carte
+{
+  text-decoration: none;
+  color: white;
+  background-color: #57CC99;
+  padding: 7px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.navbar-list-carte:hover
+{
+  background-color: #C6BDBD;
+}
+
+.navbar-workplace-list 
+{
+  text-decoration: none;
+  background-color: #57CC99;
+  color: black;
+  font-size: 22px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.navbar-workplace-list:hover
+{
+  background-color: #3da87a;
 }
 
 .nav-link
@@ -292,6 +793,44 @@ h2
   width: 740px;
 }
 
+#user_workplaces 
+{
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  left: 90px;
+}
+
+#user_cards
+{
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  right: 120px;
+  bottom: 63px;
+}
+
+#workplaceIndexLink
+{
+  text-decoration: none;
+  height: 26px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #38A3A5;
+  color: white;
+}
+
+#cardIndexLink
+{
+  text-decoration: none;
+  height: 26px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #38A3A5;
+  position: relative;
+  color: white;
+}
+
 #user_email
 {
   margin-top: 30px;
@@ -306,10 +845,25 @@ h2
   width: 740px;
 }
 
+#label_card
+{
+  font-size: 22px;
+  height: 24px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
 .nav-item
 {
     background-color: #2D7D90;
     color: white;
+}
+
+#btnNewWorkplace
+{
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
 }
 
 

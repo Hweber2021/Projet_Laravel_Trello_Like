@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-      <h2>Profile</h2>
+      <h2>Profil</h2>
       <div class="centerInterface_profile">
 
         <div class="card-body-profile" id="user_baseInfo">
@@ -24,6 +24,14 @@
         <div class="card-body-profile" id="user_email">
           <label for="email_user" id="email_label">Adresse mail :</label><br>
           <input type="text" id="email_user" name="email_user" value="{{ Auth::user()->email }}" disabled>
+        </div>
+
+        <div class="card-body-profile" id="user_workplaces">
+          <a id="workplaceIndexLink" href="{{ route('workplaces.index') }}">Mes Espaces</a>
+        </div>
+
+        <div class="card-body-profile" id="user_cards">
+          <a id="cardIndexLink" href="{{ route('cards.index') }}">Mes Cartes</a>
         </div>
       </div>
   </div>
