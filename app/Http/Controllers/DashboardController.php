@@ -65,7 +65,7 @@ class DashboardController extends Controller
     public function show(Dashboard $dashboard)
     {
         $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $dashboard->dashboard_id)->firstOrFail();
-        $lists = Lists::with('cards')->firstOrFail();
+        $lists = Lists::with('cards')->get();
         return view('Dashboard.show', compact('dashboard', 'lists'));
     }
 
