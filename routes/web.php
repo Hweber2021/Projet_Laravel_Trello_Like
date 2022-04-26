@@ -32,7 +32,8 @@ Route::get('/signup'
 })->name('signup');
 Auth::routes();
 
-Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.index');
+Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('user.profile');
+Route::post('/users/index', [UserController::class, 'update_profiledp'])->middleware('auth')->name('user.upload');
 
 Auth::routes();
 

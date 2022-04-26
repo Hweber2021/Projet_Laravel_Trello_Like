@@ -595,8 +595,6 @@ main
 {
   color: white;
   text-decoration: none;
-  background-color: cyan;
-  text-align: center;
   margin: 7px;
   border-radius: 30px;
   padding: 5px;
@@ -749,6 +747,8 @@ h2
   width: 50%;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 50px;
 }
 
 #user_baseInfo
@@ -777,6 +777,27 @@ h2
   height: 26px;
   border-radius: 20px;
   padding: 10px;
+}
+
+.form-control-file
+{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#submitFile
+{
+  font-size: 16px;
+  font-family: 'Arial, Helvetica, sans-serif';
+  color: black;
+  border-radius: 20px;
+  padding: 5px;
+  position: relative;
+  left: 340px;
+  bottom: 60px;
 }
 
 #user_username

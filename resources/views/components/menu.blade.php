@@ -18,8 +18,9 @@
                     @endif
                     @else
                     <div class="menu-right" aria-labelledby="navbarDropdown">
-                        <a id="profileLink" class="profile-link" href="{{ route('user.index') }}">
-                            {{{ Auth::user()->username }}}
+
+                        <a id="profileLink" class="profile-link" href="{{ route('user.profile') }}">
+                            <img class="rounded-circle" src="/image/{{ Auth()->user()->profiledp }}" style="width: 40px; height: 40px; border-radius:50%; margin-right:15px;"/>
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

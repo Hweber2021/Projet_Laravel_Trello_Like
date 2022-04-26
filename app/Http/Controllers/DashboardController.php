@@ -41,6 +41,7 @@ class DashboardController extends Controller
      * Store a newly created resource in storage and redirectt to specified Workplace.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param Workplace $worplace
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Workplace $workplace)
@@ -58,7 +59,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Dashboard $dashboard
      * @return \Illuminate\Http\Response
      */
     public function show(Dashboard $dashboard)
