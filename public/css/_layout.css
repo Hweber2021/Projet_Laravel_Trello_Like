@@ -645,6 +645,7 @@ main {
   text-decoration: none;
   padding: 10px;
   margin: 15px;
+  margin-bottom: 5px;
 }
 
 #name_label {
