@@ -8,17 +8,6 @@
           <img class="rounded-circle" src="/image/{{ $user->profiledp }}" style="width:100px; height:100px; float:left; border-radius:50%; margin-right:25px;"/>
         </div><br>
 
-        <div class="form-justify-content-center">
-          <form action="/users/index" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="profiledp" id="profiledpFile" aria-describedby="fileHelp">
-              <small id="fileHelp" class="form-text text-muted">Veuillez insérer un image valide. La taille de l'image ne doit pas dépasser 2MB.</small>
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitFile">Submit</button>
-          </form>
-        </div>
-
         <div class="card-body-profile" id="user_baseInfo">
           <div id="user_baseInfo_name">
             <label for="name_user" id="name_label">Nom :</label><br>
