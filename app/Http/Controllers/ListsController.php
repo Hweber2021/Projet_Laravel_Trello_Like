@@ -41,6 +41,8 @@ class ListsController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'dashboard_id' => 'required|numeric',
+        ], [
+            'name.required' => 'Le champs nom est requis'
         ]);
         $list = Lists::create($validatedData);
         $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $list->dashboard_id)->firstOrFail();
@@ -81,6 +83,8 @@ class ListsController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
+        ], [
+            'name.required' => 'Le champs nom est requis'
         ]);
         $list->update($request->all());
         $dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $list->dashboard_id)->firstOrFail();

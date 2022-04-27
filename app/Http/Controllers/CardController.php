@@ -47,6 +47,10 @@ class CardController extends Controller
             'description' => 'required',
             'user_id' => 'required|numeric',
             'num_list' => 'required|numeric',
+        ], [
+            'name.required' => 'Le champs nom est requis',
+            'label.required' => 'Un niveau de priorité est requis',
+            'description.required' => 'Une description de base est requise'
         ]);
         $dashboard_id = $request->dashboardId;
         Card::create($validatedData);
@@ -87,7 +91,10 @@ class CardController extends Controller
     public function update(Request $request, Card $card)
     {
         $request->validate([
+            'description' => 'required',
             'num_list' => 'required|numeric',
+        ], [
+            'description.required' => 'Une description de base est requise'
         ]);
         $dashboard_id = $request->dashboardId;
         $card->update($request->all());

@@ -49,6 +49,8 @@ class DashboardController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'workplace_id' => 'required|numeric',
+        ], [
+            'name.required' => 'Le champs nom est requis'
         ]);
         $dashboard = Dashboard::create($validatedData);
         $workplace = Workplace::with('dashboard')->where('workplace_id', '=', $dashboard->workplace_id)->firstOrFail();
@@ -91,6 +93,8 @@ class DashboardController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
+        ], [
+            'name.required' => 'Le champs nom est requis'
         ]);
         Dashboard::where('dashboard_id', 'LIKE', $id)->update($validatedData);
         return redirect()->route('dashboards.show')->with('success', 'Tableau modifié avec succès');

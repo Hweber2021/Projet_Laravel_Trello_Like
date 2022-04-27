@@ -44,7 +44,9 @@ class WorkplaceController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'user_id' => 'required|numeric',
+            'user_id' => 'required|numeric'
+        ], [
+            'name.required' => 'Le champ nom est requis'
         ]);
 
         Workplace::create($validatedData);
@@ -86,6 +88,8 @@ class WorkplaceController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
+        ], [
+            'name.required' => 'Le champ nom est requis'
         ]);
         $workplace->update($request->all());
         return redirect()->route('workplaces.index')->with('success', 'Espace de travail modifié avec succès');

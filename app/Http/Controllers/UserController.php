@@ -30,13 +30,12 @@ class UserController extends Controller {
         $user = Auth::user();
     
         $profiledpName = $user->id.'_profiledp'.time().'.'.request()->profiledp->getClientOriginalExtension();
-    
         $request->profiledp->storeAs('profiledps',$profiledpName);
-    
+        
         $user->profiledp = $profiledpName;
         $user->save();
     
-        return back()->with('success','You have successfully upload image.');
+        return back()->with('success','Vous avez chargé une image avec succès.');
     }
 
 } 
