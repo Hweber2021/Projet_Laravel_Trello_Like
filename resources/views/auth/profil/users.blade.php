@@ -6,7 +6,8 @@
  
         <div class="myaccount-header-img">
           <img class="rounded-circle" src="/image/{{ $user->profiledp }}" style="width:100px; height:100px; float:left; border-radius:50%; margin-right:25px;"/>
-        </div><br>
+        </div>
+        <br><br><br><br>
 
         <div class="card-body-profile" id="user_baseInfo">
           <div id="user_baseInfo_name">
