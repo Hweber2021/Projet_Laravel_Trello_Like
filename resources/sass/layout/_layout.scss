@@ -116,12 +116,18 @@ html, body
   background-color: #FAF8F8;
   border: solid;
   border-color: #C6BDBD;
-  font-size: 27px;
+  font-size: 24px;
   border-radius: 20px;
   height: 60px;
   margin: 7px;
   padding: 5px;
   display: flex;
+}
+
+#dashboard_title
+{
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .dashboard-body

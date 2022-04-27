@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body-dashboard-content">
                     <div class="card-menu-dashboard">
-                        <td>{{ $dashboard->name }}</td>
+                        <td><p id="dashboard_title">{{ $dashboard->name }}<p></td>
                         <td><a class="navbar-list"  href="{{ route('lists.create') }}">Ajouter une liste</a></td>
                         <td><a class="navbar-workplace-list" href="{{ route('workplaces.index') }}">Retour à vos espaces</a></td>
                     </div>
