@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a class="navbar-brand-card-create" href="{{ route('cards.index') }}">
+                    <a class="navbar-brand-card-create" href="{{ route('workplaces.index') }}" disable>
                         <img src="/image/logo.png" alt="logo">
                     </a>
                 </div>
