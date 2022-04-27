@@ -52,7 +52,6 @@ class CardController extends Controller
             'label.required' => 'Un niveau de priorité est requis',
             'description.required' => 'Une description de base est requise'
         ]);
-        $dashboard_id = $request->dashboardId;
         Card::create($validatedData);
         return redirect()->route('workplaces.index')->with('success', 'Carte créer avec succès');
     }
@@ -96,7 +95,6 @@ class CardController extends Controller
         ], [
             'description.required' => 'Une description de base est requise'
         ]);
-        $dashboard_id = $request->dashboardId;
         $card->update($request->all());
 
         return redirect()->route('workplaces.index')->with('success', 'Carte mise à jour');
@@ -111,7 +109,6 @@ class CardController extends Controller
     public function destroy(Request $request ,$id)
     {
         $card = Card::findOrFail($id);
-        //$dashboard = Dashboard::with('lists')->where('dashboard_id', '=', $card->lists->dashboard_id)->firstOrFail();
         $dashboard_id = $request->dashboardId;
         $card->delete();
 
